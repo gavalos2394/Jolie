@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr Jolie Beaute &amp; Aesthetic Centre | Botox, Fillers, Profhilo &amp; Laser in Hong Kong</title>
+<meta name="description" content="Dr Jolie Beaute &amp; Aesthetic Centre in Jordan, Hong Kong. Premium Botox, dermal fillers, Profhilo, skin facials, IPL and laser treatments. Book your consultation today." />
+<meta name="keywords" content="Botox Hong Kong, Beaute, Fillers, Skin, Facial, Profhilo, IPL, Laser, Aesthetic Centre Hong Kong" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Dr Jolie Beaute &amp; Aesthetic Centre | Hong Kong" />
+<meta property="og:description" content="Premium aesthetic treatments in Jordan, Hong Kong — Botox, Fillers, Profhilo, Facials, IPL &amp; Laser." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue-900:#0b2c52;
+    --blue-700:#1d5fa8;
+    --blue-500:#3b82d6;
+    --blue-400:#5fa0e6;
+    --blue-200:#bfdcf5;
+    --blue-100:#e4f0fc;
+    --blue-50:#f3f8fe;
+    --ink:#15263b;
+    --slate:#5b6b80;
+    --line:#e3ebf4;
+    --white:#ffffff;
+    --shadow:0 18px 50px -22px rgba(29,95,168,.45);
+    --shadow-sm:0 8px 28px -16px rgba(29,95,168,.4);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Jost',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.1;color:var(--blue-900)}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--sans);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--blue-500)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:500;font-size:.95rem;padding:.85rem 1.7rem;border-radius:50px;cursor:pointer;border:1px solid transparent;transition:.25s;letter-spacing:.02em}
+  .btn-primary{background:linear-gradient(135deg,var(--blue-500),var(--blue-700));color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--blue-700);border-color:var(--blue-200)}
+  .btn-ghost:hover{background:var(--blue-100);border-color:var(--blue-400)}
+  .btn-light{background:#fff;color:var(--blue-700)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+  /* HEADER */
+  header.site{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--blue-900)}
+  .logo .mark{width:38px;height:38px;flex:none}
+  .logo small{display:block;font-family:var(--sans);font-weight:400;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-500);margin-top:2px}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+  .nav-links a{font-size:.92rem;font-weight:400;color:var(--ink);position:relative;padding:4px 0;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--blue-700)}
+  .nav-links a.active::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:var(--blue-500);border-radius:2px}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-links li.mobile-only{display:none}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--blue-900);border-radius:2px;transition:.3s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* PAGES */
+  .page{display:none;animation:fade .5s ease}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  section{padding:96px 0}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center}
+  .section-head h2{font-size:2.6rem;margin:.6rem 0 1rem}
+  .section-head p{color:var(--slate);font-size:1.05rem}
+
+  /* HERO */
+  .hero{position:relative;padding:120px 0 110px;background:
+     radial-gradient(900px 500px at 85% -10%,var(--blue-100),transparent),
+     radial-gradient(700px 400px at -5% 110%,var(--blue-50),transparent);
+     overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .hero h1{font-size:3.7rem;margin:1.2rem 0 1.4rem;letter-spacing:-.01em}
+  .hero h1 em{font-style:italic;color:var(--blue-500)}
+  .hero p.lead{font-size:1.15rem;color:var(--slate);max-width:520px;margin-bottom:2rem}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:2.5rem;margin-top:3rem}
+  .hero-stats div span{display:block;font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--blue-700)}
+  .hero-stats div small{color:var(--slate);font-size:.82rem;letter-spacing:.04em}
+  .hero-visual{position:relative}
+  .hero-visual img{width:100%;height:560px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}
+  .hero-badge{position:absolute;bottom:28px;left:-28px;background:#fff;border-radius:18px;padding:1rem 1.3rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.8rem;border:1px solid var(--line)}
+  .hero-badge .ic{width:44px;height:44px;border-radius:12px;background:var(--blue-100);display:flex;align-items:center;justify-content:center;color:var(--blue-700)}
+  .hero-badge strong{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--blue-900)}
+  .hero-badge small{color:var(--slate);font-size:.78rem}
+
+  /* TRUST STRIP */
+  .trust{background:var(--blue-900);padding:26px 0}
+  .trust .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+  .trust span{color:#cfe1f5;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;display:flex;align-items:center;gap:.6rem}
+  .trust span b{color:#fff;font-weight:600}
+
+  /* BENEFITS */
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .bcard{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:38px 32px;transition:.3s}
+  .bcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--blue-200)}
+  .bcard .ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--blue-100),var(--blue-200));display:flex;align-items:center;justify-content:center;color:var(--blue-700);margin-bottom:1.3rem}
+  .bcard h3{font-size:1.4rem;margin-bottom:.6rem}
+  .bcard p{color:var(--slate);font-size:.96rem}
+
+  /* SERVICES PREVIEW / GRID */
+  .alt{background:var(--blue-50)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .svc img{width:100%;height:210px;object-fit:cover}
+  .svc-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+  .svc-body h3{font-size:1.45rem;margin-bottom:.5rem}
+  .svc-body p{color:var(--slate);font-size:.93rem;margin-bottom:1.2rem;flex:1}
+  .svc-tag{align-self:flex-start;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-700);background:var(--blue-100);padding:.35rem .8rem;border-radius:50px;margin-bottom:1rem;font-weight:600}
+  .more{color:var(--blue-700);font-weight:500;font-size:.9rem;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s}
+  .more:hover{gap:.7rem}
+
+  /* TESTIMONIALS */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 30px;box-shadow:var(--shadow-sm)}
+  .stars{color:#f5b301;letter-spacing:2px;margin-bottom:1rem;font-size:1rem}
+  .tcard p{color:var(--ink);font-style:italic;font-family:var(--serif);font-size:1.18rem;line-height:1.5;margin-bottom:1.4rem}
+  .tperson{display:flex;align-items:center;gap:.9rem}
+  .tperson img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+  .tperson strong{display:block;font-family:var(--sans);font-weight:600;font-size:.92rem}
+  .tperson small{color:var(--slate);font-size:.8rem}
+
+  /* ABOUT PREVIEW / SPLIT */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .split img{width:100%;height:480px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}
+  .split h2{font-size:2.5rem;margin:.7rem 0 1.2rem}
+  .split p{color:var(--slate);margin-bottom:1.1rem}
+  .split ul{list-style:none;margin:1.4rem 0}
+  .split ul li{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.8rem;color:var(--ink);font-size:.97rem}
+  .split ul li svg{flex:none;color:var(--blue-500);margin-top:3px}
+
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(135deg,var(--blue-700),var(--blue-900));color:#fff;text-align:center;border-radius:28px;padding:72px 40px;box-shadow:var(--shadow)}
+  .cta-band h2{color:#fff;font-size:2.5rem;margin-bottom:1rem}
+  .cta-band p{color:#d6e6f8;max-width:560px;margin:0 auto 2rem;font-size:1.05rem}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px 26px;position:relative}
+  .step .num{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--blue-200);line-height:1}
+  .step h3{font-size:1.25rem;margin:.5rem 0 .5rem}
+  .step p{color:var(--slate);font-size:.9rem}
+
+  /* FAQ */
+  .faq{max-width:780px;margin:0 auto}
+  .faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;background:#fff}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 26px;font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--blue-900);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq-q span.plus{font-family:var(--sans);font-size:1.5rem;color:var(--blue-500);transition:.3s;flex:none}
+  .faq-item.open .faq-q span.plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--slate)}
+  .faq-a p{padding:0 26px 22px}
+
+  /* LISTINGS FILTER */
+  .filter-bar{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+  .filter-bar button{background:#fff;border:1px solid var(--line);padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;font-family:var(--sans);font-size:.88rem;color:var(--slate);transition:.2s}
+  .filter-bar button:hover{border-color:var(--blue-400);color:var(--blue-700)}
+  .filter-bar button.active{background:linear-gradient(135deg,var(--blue-500),var(--blue-700));color:#fff;border-color:transparent}
+  .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .lcard{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;transition:.35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .lcard .imgwrap{position:relative;overflow:hidden}
+  .lcard img{width:100%;height:260px;object-fit:cover;transition:.5s}
+  .lcard:hover img{transform:scale(1.06)}
+  .lcard .cat{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--blue-700);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.35rem .8rem;border-radius:50px}
+  .lcard-body{padding:22px 24px 26px}
+  .lcard-body h3{font-size:1.3rem;margin-bottom:.4rem}
+  .lcard-body p{color:var(--slate);font-size:.9rem;margin-bottom:1rem}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  form .field{margin-bottom:18px}
+  form label{display:block;font-size:.85rem;font-weight:500;margin-bottom:.4rem;color:var(--ink)}
+  form input,form textarea,form select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:.95rem;background:var(--blue-50);transition:.2s}
+  form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--blue-400);background:#fff;box-shadow:0 0 0 4px var(--blue-100)}
+  form textarea{resize:vertical;min-height:120px}
+  .form-note{font-size:.8rem;color:var(--slate);margin-top:.6rem}
+  .form-success{display:none;background:var(--blue-100);border:1px solid var(--blue-200);color:var(--blue-900);padding:1rem 1.2rem;border-radius:12px;margin-top:1rem;font-size:.92rem}
+  .info-card{background:var(--blue-50);border:1px solid var(--line);border-radius:20px;padding:34px}
+  .info-row{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
+  .info-row .ic{width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--blue-700);flex:none;box-shadow:var(--shadow-sm)}
+  .info-row strong{display:block;font-family:var(--sans);font-weight:600;font-size:.9rem;margin-bottom:.15rem}
+  .info-row a,.info-row span{color:var(--slate);font-size:.92rem}
+  .info-row a:hover{color:var(--blue-700)}
+  .map-wrap{margin-top:1.5rem;border-radius:16px;overflow:hidden;border:1px solid var(--line);height:240px}
+  .map-wrap iframe{width:100%;height:100%;border:0}
+
+  /* FOOTER */
+  footer.site{background:var(--blue-900);color:#c9dcf2;padding:72px 0 32px;margin-top:0}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:44px}
+  footer.site .logo{color:#fff}
+  footer.site .logo small{color:var(--blue-200)}
+  footer.site p.tag{margin-top:1rem;font-size:.9rem;color:#9fc0e4;max-width:280px}
+  .foot-grid h4{color:#fff;font-size:1.15rem;margin-bottom:1.1rem}
+  .foot-grid ul{list-style:none}
+  .foot-grid ul li{margin-bottom:.6rem}
+  .foot-grid ul li a{color:#9fc0e4;font-size:.9rem;transition:.2s}
+  .foot-grid ul li a:hover{color:#fff}
+  .foot-contact div{font-size:.9rem;color:#9fc0e4;margin-bottom:.7rem;display:flex;gap:.6rem;align-items:flex-start}
+  .socials{display:flex;gap:.7rem;margin-top:1.2rem}
+  .socials a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s}
+  .socials a:hover{background:var(--blue-500)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.82rem;color:#7fa3cc}
+
+  /* RESPONSIVE */
+  @media(max-width:980px){
+    .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
+    .hero h1{font-size:2.9rem}
+    .hero-visual img{height:420px}
+    .benefits,.svc-grid,.tgrid,.listings{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero-badge{left:0}
+  }
+  @media(max-width:680px){
+    section{padding:70px 0}
+    .nav-links,.nav-cta .btn{display:none}
+    .burger{display:flex}
+    .nav-links.mobile{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;background:#fff;padding:24px;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line);z-index:99}
+    .nav-links.mobile a{font-size:1.05rem}
+    .nav-links.mobile li.mobile-only{display:block}
+    .nav-links.mobile .btn{display:inline-flex;margin-top:.5rem}
+    .hero h1{font-size:2.3rem}
+    .section-head h2,.split h2,.cta-band h2{font-size:2rem}
+    .benefits,.svc-grid,.tgrid,.listings,.steps,.foot-grid{grid-template-columns:1fr}
+    .hero-stats{gap:1.6rem}
+    .cta-band{padding:50px 24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="wrap nav">
+    <a href="#home" class="logo" data-link>
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50" fill="#fff" stroke="#e3ebf4"/>
+        <g fill="#3b82d6">
+          <path d="M50 22a16 16 0 0 1 16 16H50z"/>
+          <path d="M78 50a16 16 0 0 1-16 16V50z"/>
+          <path d="M50 78a16 16 0 0 1-16-16h16z"/>
+          <path d="M22 50a16 16 0 0 1 16-16v16z"/>
+        </g>
+      </svg>
+      <span>Dr Jolie<small>Beaute &amp; Aesthetic</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-link class="active">Home</a></li>
+      <li><a href="#about" data-link>About</a></li>
+      <li><a href="#services" data-link>Services</a></li>
+      <li><a href="#listings" data-link>Listings</a></li>
+      <li><a href="#contact" data-link>Contact</a></li>
+      <li class="mobile-only"><a href="#contact" data-link class="btn btn-primary" style="color:#fff">Book a Consultation</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" data-link class="btn btn-primary">Book a Consultation</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Beaute &amp; Aesthetic Centre · Hong Kong</p>
+        <h1>Reveal your most <em>radiant</em> skin, naturally.</h1>
+        <p class="lead">Doctor-led Botox, dermal fillers, Profhilo, advanced facials, IPL and laser — delivered with precision and care in the heart of Jordan, Kowloon.</p>
+        <div class="hero-cta">
+          <a href="#contact" data-link class="btn btn-primary">Book a Consultation</a>
+          <a href="#services" data-link class="btn btn-ghost">Explore Treatments</a>
+        </div>
+        <div class="hero-stats">
+          <div><span>10k+</span><small>Treatments delivered</small></div>
+          <div><span>4.9★</span><small>Average client rating</small></div>
+          <div><span>15+</span><small>Years of expertise</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" alt="Relaxed client receiving a professional aesthetic skin treatment at Dr Jolie clinic" />
+        <div class="hero-badge">
+          <div class="ic">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <div><strong>Doctor-Led Care</strong><small>Safe, certified &amp; personalised</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <div class="trust">
+    <div class="wrap">
+      <span><b>✓</b> Licensed Medical Doctors</span>
+      <span><b>✓</b> FDA-Approved Products</span>
+      <span><b>✓</b> Personalised Treatment Plans</span>
+      <span><b>✓</b> Discreet Jordan MTR Location</span>
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why Dr Jolie</p>
+        <h2>Aesthetics, elevated by expertise</h2>
+        <p>Every treatment begins with a thorough consultation and ends with results that look like the best version of you.</p>
+      </div>
+      <div class="benefits">
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 6.4L21 9l-5 4.3L17.5 21 12 17.3 6.5 21 8 13.3 3 9l6.6-.6z"/></svg></div>
+          <h3>Natural-Looking Results</h3>
+          <p>We enhance, never overdo. Subtle, balanced outcomes that respect your unique features and refresh your confidence.</p>
+        </div>
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Safety First, Always</h3>
+          <p>Medical-grade products, sterile protocols and qualified doctors. Your wellbeing guides every decision we make.</p>
+        </div>
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
+          <h3>Tailored To You</h3>
+          <p>No two faces are alike. We design bespoke plans around your goals, skin type and lifestyle — not a one-size template.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Signature Treatments</p>
+        <h2>Our most-loved services</h2>
+        <p>From injectables to advanced skin therapies — a curated menu for face and skin rejuvenation.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1618015360024-ccee40620891?auto=format&fit=crop&w=700&q=80" alt="Botox vials and injectable treatment bottles at the clinic" />
+          <div class="svc-body">
+            <span class="svc-tag">Injectables</span>
+            <h3>Botox &amp; Anti-Wrinkle</h3>
+            <p>Smooth fine lines and soften expression wrinkles for a refreshed, well-rested look.</p>
+            <a href="#services" data-link class="more">Learn more →</a>
+          </div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Dermal filler treatment for facial contouring and volume restoration" />
+          <div class="svc-body">
+            <span class="svc-tag">Injectables</span>
+            <h3>Dermal Fillers</h3>
+            <p>Restore volume, sculpt contours and rejuvenate lips, cheeks and jawline with precision.</p>
+            <a href="#services" data-link class="more">Learn more →</a>
+          </div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Profhilo bio-remodelling skin hydration treatment" />
+          <div class="svc-body">
+            <span class="svc-tag">Skin Boosters</span>
+            <h3>Profhilo</h3>
+            <p>Bio-remodelling that deeply hydrates and firms skin from within for a luminous glow.</p>
+            <a href="#services" data-link class="more">Learn more →</a>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:44px">
+        <a href="#services" data-link class="btn btn-primary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Client Love</p>
+        <h2>What our clients say</h2>
+      </div>
+      <div class="tgrid">
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"The most natural Botox I've ever had. Dr Jolie really listens and the clinic feels so calm and premium."</p>
+          <div class="tperson"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Portrait of client Wing L." /><div><strong>Wing L.</strong><small>Central, Hong Kong</small></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"My skin has never looked better after Profhilo. Professional, painless and the results speak for themselves."</p>
+          <div class="tperson"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&q=80" alt="Portrait of client Carmen T." /><div><strong>Carmen T.</strong><small>Tsim Sha Tsui</small></div></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"Booked for fillers and left feeling like myself, only fresher. I trust no one else with my face now."</p>
+          <div class="tperson"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Portrait of client Priya S." /><div><strong>Priya S.</strong><small>Kowloon</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About preview -->
+  <section class="alt">
+    <div class="wrap split">
+      <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80" alt="Modern, bright aesthetic clinic treatment room at Dr Jolie" />
+      <div>
+        <p class="eyebrow">About Dr Jolie</p>
+        <h2>Where medical precision meets beauty</h2>
+        <p>Dr Jolie Beaute &amp; Aesthetic Centre was founded on a simple belief: aesthetic medicine should feel safe, personal and empowering. We combine clinical excellence with an artist's eye for balance.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg> Doctor-led consultations, never rushed</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg> Premium, regulated products only</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg> A discreet, calming environment</li>
+        </ul>
+        <a href="#about" data-link class="btn btn-ghost">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Ready to glow?</h2>
+        <p>Book a personalised consultation with Dr Jolie and discover the treatment plan that's right for you.</p>
+        <a href="#contact" data-link class="btn btn-light">Book Your Consultation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="about">
+  <section class="hero" style="padding:90px 0 70px">
+    <div class="wrap" style="text-align:center;max-width:760px">
+      <p class="eyebrow">Our Story</p>
+      <h1 style="font-size:3rem;margin:1rem 0">Beauty, backed by medicine</h1>
+      <p class="lead" style="margin:0 auto">A Hong Kong aesthetic centre built on trust, artistry and genuine care for every client who walks through our doors.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:40px">
+    <div class="wrap split">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Doctor in a modern aesthetic clinic consulting with a client" />
+      <div>
+        <p class="eyebrow">The Beginning</p>
+        <h2>A clinic built on confidence</h2>
+        <p>Dr Jolie Beaute &amp; Aesthetic Centre was created to bridge the gap between clinical safety and beautiful, natural results. Too often, clients felt rushed or pushed toward treatments they didn't need. We do things differently.</p>
+        <p>Located on Nathan Road in Jordan, our centre offers a serene, private space where every client is seen, heard and cared for by qualified medical professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Our Mission</p>
+        <h2>Helping Hong Kong feel its best</h2>
+        <p>Our mission is to deliver aesthetic treatments that enhance your natural beauty while prioritising your health, comfort and confidence. We believe great aesthetic medicine is invisible — people should notice you, not your treatment.</p>
+        <p>From your first consultation to your aftercare, we're committed to honesty, transparency and results you'll genuinely love.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=800&q=80" alt="Calm spa-like aesthetic clinic interior with soft lighting" />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What Makes Us Different</p>
+        <h2>The Dr Jolie difference</h2>
+      </div>
+      <div class="benefits">
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9 18l-5-5"/></svg></div>
+          <h3>Doctor-Led, Always</h3>
+          <p>Treatments are planned and performed by qualified medical doctors — not technicians — for your safety and the best outcomes.</p>
+        </div>
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>No-Rush Consultations</h3>
+          <p>We take the time to understand your goals and explain your options honestly — never pressuring, always advising.</p>
+        </div>
+        <div class="bcard">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 6.4L21 9l-5 4.3L17.5 21 12 17.3 6.5 21 8 13.3 3 9l6.6-.6z"/></svg></div>
+          <h3>Premium Standards</h3>
+          <p>Only regulated, clinically proven products and the latest devices, in an immaculate, calming environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Come and meet us</h2>
+        <p>Book a relaxed, no-obligation consultation and see why our clients keep coming back.</p>
+        <a href="#contact" data-link class="btn btn-light">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<div class="page" id="services">
+  <section class="hero" style="padding:90px 0 60px">
+    <div class="wrap" style="text-align:center;max-width:760px">
+      <p class="eyebrow">Treatments</p>
+      <h1 style="font-size:3rem;margin:1rem 0">Our aesthetic services</h1>
+      <p class="lead" style="margin:0 auto">A complete menu of doctor-led face and skin treatments, tailored to your goals.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="svc-grid">
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1618093970253-002eac767c04?auto=format&fit=crop&w=700&q=80" alt="Botox injectable vial bottle used for anti-wrinkle treatment" />
+          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Botox</h3><p>Relax dynamic wrinkles on the forehead, frown lines and crow's feet for a smooth, refreshed appearance.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Dermal filler facial contouring treatment" />
+          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Dermal Fillers</h3><p>Restore lost volume and define lips, cheeks, chin and jawline with premium hyaluronic acid fillers.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Profhilo bio-remodelling skin booster treatment" />
+          <div class="svc-body"><span class="svc-tag">Skin Boosters</span><h3>Profhilo</h3><p>An injectable bio-remodelling treatment that deeply hydrates, firms and improves overall skin quality.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80" alt="Relaxing facial skincare treatment at the clinic" />
+          <div class="svc-body"><span class="svc-tag">Skin</span><h3>Signature Facials</h3><p>Bespoke medical-grade facials that cleanse, exfoliate and nourish for an instant healthy glow.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="IPL intense pulsed light skin treatment device" />
+          <div class="svc-body"><span class="svc-tag">Light Therapy</span><h3>IPL Photofacial</h3><p>Intense pulsed light to reduce pigmentation, redness and sun damage for clearer, even-toned skin.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=80" alt="Laser skin rejuvenation treatment" />
+          <div class="svc-body"><span class="svc-tag">Laser</span><h3>Laser Treatments</h3><p>Advanced laser therapy for skin resurfacing, tightening and a smoother, more youthful complexion.</p><a href="#contact" data-link class="more">Book now →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How It Works</p>
+        <h2>Your journey with us</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Consultation</h3><p>We listen to your goals and assess your skin and facial structure in a relaxed, private setting.</p></div>
+        <div class="step"><div class="num">02</div><h3>Tailored Plan</h3><p>Your doctor designs a personalised treatment plan with honest advice and transparent pricing.</p></div>
+        <div class="step"><div class="num">03</div><h3>Treatment</h3><p>Your treatment is performed with precision, comfort and the highest safety standards.</p></div>
+        <div class="step"><div class="num">04</div><h3>Aftercare</h3><p>We guide you through recovery and follow up to ensure you love your results.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q">Is Botox safe?<span class="plus">+</span></button><div class="faq-a"><p>Yes. When administered by qualified medical doctors using regulated products, Botox has an excellent safety record. We assess your suitability during consultation and explain everything beforehand.</p></div></div>
+        <div class="faq-item"><button class="faq-q">How long do fillers last?<span class="plus">+</span></button><div class="faq-a"><p>Most dermal fillers last between 6 and 18 months depending on the product and treatment area. We'll advise on the best option and maintenance schedule for you.</p></div></div>
+        <div class="faq-item"><button class="faq-q">What is Profhilo and how is it different?<span class="plus">+</span></button><div class="faq-a"><p>Profhilo is a bio-remodelling injectable that uses pure hyaluronic acid to hydrate and stimulate collagen across a wider area, improving overall skin quality rather than adding volume to one spot.</p></div></div>
+        <div class="faq-item"><button class="faq-q">Is there any downtime?<span class="plus">+</span></button><div class="faq-a"><p>Most treatments have minimal downtime. You may experience slight redness or swelling that settles quickly. We provide full aftercare guidance for every treatment.</p></div></div>
+        <div class="faq-item"><button class="faq-q">How do I book a consultation?<span class="plus">+</span></button><div class="faq-a"><p>Simply use our contact form, call us on +852 6628 6127, or message us on Instagram @joliebeaute_hk. We'll find a time that suits you.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Not sure which treatment is right?</h2>
+        <p>Book a consultation and let our doctors recommend the perfect plan for your skin and goals.</p>
+        <a href="#contact" data-link class="btn btn-light">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LISTINGS / PORTFOLIO ============ -->
+<div class="page" id="listings">
+  <section class="hero" style="padding:90px 0 50px">
+    <div class="wrap" style="text-align:center;max-width:760px">
+      <p class="eyebrow">Portfolio</p>
+      <h1 style="font-size:3rem;margin:1rem 0">Our work &amp; treatments</h1>
+      <p class="lead" style="margin:0 auto">A glimpse of the treatments and natural-looking results our clients love. Filter by category to explore.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:10px">
+    <div class="wrap">
+      <div class="filter-bar" id="filterBar">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="injectables">Injectables</button>
+        <button data-filter="skin">Skin &amp; Facial</button>
+        <button data-filter="laser">Laser &amp; IPL</button>
+      </div>
+      <div class="listings" id="listingGrid">
+        <article class="lcard" data-cat="injectables">
+          <div class="imgwrap"><span class="cat">Botox</span><img src="https://images.unsplash.com/photo-1618015359860-99eb20ee6794?auto=format&fit=crop&w=700&q=80" alt="Botox bottle vials for anti-wrinkle treatment" /></div>
+          <div class="lcard-body"><h3>Anti-Wrinkle Refresh</h3><p>Smoothed forehead and frown lines for a naturally rested look.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="injectables">
+          <div class="imgwrap"><span class="cat">Fillers</span><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Lip and cheek dermal filler result" /></div>
+          <div class="lcard-body"><h3>Lip &amp; Cheek Contour</h3><p>Subtle volume and definition with premium hyaluronic fillers.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="skin">
+          <div class="imgwrap"><span class="cat">Profhilo</span><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Profhilo skin hydration treatment result" /></div>
+          <div class="lcard-body"><h3>Profhilo Glow</h3><p>Deeply hydrated, firmer skin with a luminous, healthy finish.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="skin">
+          <div class="imgwrap"><span class="cat">Facial</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80" alt="Signature facial skincare treatment" /></div>
+          <div class="lcard-body"><h3>Signature Facial</h3><p>Medical-grade facial for an instant, radiant complexion.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="laser">
+          <div class="imgwrap"><span class="cat">IPL</span><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="IPL photofacial light therapy treatment" /></div>
+          <div class="lcard-body"><h3>IPL Photofacial</h3><p>Reduced pigmentation and redness for clearer, even-toned skin.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="laser">
+          <div class="imgwrap"><span class="cat">Laser</span><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=80" alt="Laser skin rejuvenation and resurfacing treatment" /></div>
+          <div class="lcard-body"><h3>Laser Rejuvenation</h3><p>Smoother, tighter, more youthful skin with advanced laser therapy.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="skin">
+          <div class="imgwrap"><span class="cat">Skin</span><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Skin consultation and analysis at the clinic" /></div>
+          <div class="lcard-body"><h3>Skin Analysis</h3><p>In-depth skin assessment to build your personalised plan.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="injectables">
+          <div class="imgwrap"><span class="cat">Fillers</span><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=700&q=80" alt="Jawline contouring filler treatment" /></div>
+          <div class="lcard-body"><h3>Jawline Definition</h3><p>Sculpted, balanced profile with expertly placed fillers.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+        <article class="lcard" data-cat="laser">
+          <div class="imgwrap"><span class="cat">Laser</span><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Laser hair and skin treatment in progress" /></div>
+          <div class="lcard-body"><h3>Skin Tightening</h3><p>Firmer, lifted skin texture with non-invasive laser tightening.</p><a href="#contact" data-link class="more">Book this →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Love what you see?</h2>
+        <p>Your results start with a conversation. Book your consultation with Dr Jolie today.</p>
+        <a href="#contact" data-link class="btn btn-light">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="contact">
+  <section class="hero" style="padding:90px 0 50px">
+    <div class="wrap" style="text-align:center;max-width:760px">
+      <p class="eyebrow">Get In Touch</p>
+      <h1 style="font-size:3rem;margin:1rem 0">Book your consultation</h1>
+      <p class="lead" style="margin:0 auto">We'd love to hear from you. Send us a message and our team will be in touch shortly.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:10px">
+    <div class="wrap contact-grid">
+      <div>
+        <form id="contactForm" novalidate>
+          <div class="field"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Enter your name" required /></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com" required /></div>
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" placeholder="+852 ..." /></div>
+          <div class="field"><label for="service">Treatment of Interest</label>
+            <select id="service" name="service">
+              <option>Botox</option><option>Dermal Fillers</option><option>Profhilo</option>
+              <option>Facial</option><option>IPL</option><option>Laser</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you'd like to achieve..."></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message</button>
+          <p class="form-note">By submitting, you agree to be contacted about your enquiry. We respect your privacy.</p>
+          <div class="form-success" id="formSuccess">Thank you! Your message has been received. Our team will contact you shortly.</div>
+        </form>
+      </div>
+
+      <div>
+        <div class="info-card">
+          <h3 style="font-size:1.5rem;margin-bottom:1.5rem">Dr Jolie Beaute &amp; Aesthetic Centre</h3>
+          <div class="info-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><strong>Visit Us</strong><span>Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, Hong Kong</span></div>
+          </div>
+          <div class="info-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><strong>Call Us</strong><a href="tel:+85266286127">+852 6628 6127</a></div>
+          </div>
+          <div class="info-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+            <div><strong>Instagram</strong><a href="https://instagram.com/joliebeaute_hk" target="_blank" rel="noopener">@joliebeaute_hk</a></div>
+          </div>
+          <div class="map-wrap">
+            <iframe title="Map to Dr Jolie Beaute & Aesthetic Centre, Nathan Road Jordan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=301-309+Nathan+Road,+Jordan,+Hong+Kong&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" data-link class="logo">
+          <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#fff"/><g fill="#3b82d6"><path d="M50 22a16 16 0 0 1 16 16H50z"/><path d="M78 50a16 16 0 0 1-16 16V50z"/><path d="M50 78a16 16 0 0 1-16-16h16z"/><path d="M22 50a16 16 0 0 1 16-16v16z"/></g></svg>
+          <span>Dr Jolie<small>Beaute &amp; Aesthetic</small></span>
+        </a>
+        <p class="tag">Doctor-led aesthetic medicine in the heart of Jordan, Hong Kong. Botox, fillers, Profhilo, facials, IPL &amp; laser.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home" data-link>Home</a></li>
+          <li><a href="#about" data-link>About</a></li>
+          <li><a href="#services" data-link>Services</a></li>
+          <li><a href="#listings" data-link>Listings</a></li>
+          <li><a href="#contact" data-link>Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Treatments</h4>
+        <ul>
+          <li><a href="#services" data-link>Botox</a></li>
+          <li><a href="#services" data-link>Dermal Fillers</a></li>
+          <li><a href="#services" data-link>Profhilo</a></li>
+          <li><a href="#services" data-link>Facials</a></li>
+          <li><a href="#services" data-link>IPL &amp; Laser</a></li>
+        </ul>
+      </div>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-top:3px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, HK</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-top:3px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> <a href="tel:+85266286127">+852 6628 6127</a></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-top:3px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> <a href="https://instagram.com/joliebeaute_hk" target="_blank" rel="noopener">@joliebeaute_hk</a></div>
+        <div class="socials">
+          <a href="https://instagram.com/joliebeaute_hk" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/85266286127" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.8-1.5A10 10 0 1012 2zm0 18a8 8 0 01-4.2-1.2l-.3-.2-2.8.9.9-2.7-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5 0a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 00-.7.3 2.8 2.8 0 00-.9 2.1c0 1.2.9 2.4 1 2.6s1.7 2.7 4.2 3.8a14 14 0 001.4.5 3.4 3.4 0 001.5.1c.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1z"/></svg></a>
+          <a href="tel:+85266286127" aria-label="Phone"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="year"></span> Dr Jolie Beaute &amp; Aesthetic Centre. All rights reserved. · Jordan, Hong Kong</div>
+  </div>
+</footer>
+
+<script>
+  // ---- Page routing ----
+  const pages = document.querySelectorAll('.page');
+  const navAnchors = document.querySelectorAll('#navLinks a[data-link]');
+  function showPage(id){
+    pages.forEach(p=>p.classList.toggle('active', p.id===id));
+    navAnchors.forEach(a=>{
+      const t=a.getAttribute('href').slice(1);
+      if(!a.classList.contains('btn')) a.classList.toggle('active', t===id);
+    });
+    window.scrollTo(0,0);
+    closeMenu();
+  }
+  function route(){
+    const id=(location.hash.slice(1))||'home';
+    showPage(document.getElementById(id)?id:'home');
+  }
+  document.querySelectorAll('a[data-link]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const href=a.getAttribute('href');
+      if(href.startsWith('#')){e.preventDefault();const id=href.slice(1);
+        if(location.hash===href){showPage(id);}else{location.hash=href;}
+      }
+    });
+  });
+  window.addEventListener('hashchange',route);
+  route();
+
+  // ---- Mobile menu ----
+  const burger=document.getElementById('burger');
+  const navLinks=document.getElementById('navLinks');
+  function closeMenu(){burger.classList.remove('open');navLinks.classList.remove('mobile');}
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('mobile');});
+
+  // ---- FAQ ----
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;const a=item.querySelector('.faq-a');
+      const open=item.classList.toggle('open');
+      a.style.maxHeight=open?a.scrollHeight+'px':0;
+    });
+  });
+
+  // ---- Listings filter ----
+  const fbar=document.getElementById('filterBar');
+  if(fbar){
+    fbar.addEventListener('click',e=>{
+      if(e.target.tagName!=='BUTTON')return;
+      fbar.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+      e.target.classList.add('active');
+      const f=e.target.dataset.filter;
+      document.querySelectorAll('#listingGrid .lcard').forEach(c=>{
+        c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
+      });
+    });
+  }
+
+  // ---- Contact form ----
+  const form=document.getElementById('contactForm');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!form.name.value.trim()||!form.email.value.trim()){
+      alert('Please enter your name and email.');return;
+    }
+    document.getElementById('formSuccess').style.display='block';
+    form.reset();
+  });
+
+  // ---- Year ----
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
