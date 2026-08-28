@@ -1,0 +1,11 @@
+# Static site: no build step, files are served straight from the repo root.
+[build]
+  publish = "."
+
+# Pages are routed client-side with location.hash (#home, #about, ...),
+# so every URL already resolves to index.html and no rewrite rule is needed.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
