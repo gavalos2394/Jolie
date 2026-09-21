@@ -180,6 +180,34 @@
   .lcard-body h3{font-size:1.3rem;margin-bottom:.4rem}
   .lcard-body p{color:var(--slate);font-size:.9rem;margin-bottom:1rem}
 
+  /* SERVICE CATEGORY GRID (Services page) */
+  #servicesCatGrid{grid-template-columns:repeat(4,1fr)}
+  .svc-price{font-family:var(--sans);font-weight:600;color:var(--blue-700);font-size:1.05rem;margin-bottom:.8rem}
+  .svc-price small{font-weight:400;color:var(--slate);font-size:.76rem;margin-left:.35rem;letter-spacing:.02em}
+
+  /* PRICE LIST (Listings page) */
+  .price-list{display:flex;flex-direction:column;gap:22px}
+  .price-cat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 36px 32px;scroll-margin-top:110px}
+  .price-cat-head{margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .price-cat-head h3{font-size:1.6rem;margin-bottom:.35rem}
+  .price-cat-head p{color:var(--slate);font-size:.92rem;max-width:560px}
+  .price-table{display:flex;flex-direction:column}
+  .price-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .price-row:last-child{border-bottom:none}
+  .pname{font-weight:500;color:var(--ink);font-size:.98rem}
+  .pname .addon-tag{display:inline-block;margin-left:.5rem;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-700);background:var(--blue-100);padding:.18rem .55rem;border-radius:50px;vertical-align:middle}
+  .pprice{font-weight:600;color:var(--blue-700);white-space:nowrap;text-align:right;font-size:.98rem;flex:none}
+  .pprice small{display:block;font-weight:400;color:var(--slate);font-size:.76rem;margin-top:1px}
+  .price-variants{display:flex;flex-direction:column;gap:5px;text-align:right;flex:none}
+  .price-variants div{font-size:.88rem;color:var(--slate);white-space:nowrap}
+  .price-variants div b{color:var(--blue-700);font-weight:600}
+  .price-note{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;padding:16px 22px;color:var(--blue-900);font-size:.86rem;text-align:center}
+  .wax-table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .wax-table th{text-align:left;font-family:var(--sans);font-weight:600;color:var(--blue-700);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem;padding:0 8px 12px}
+  .wax-table td{padding:11px 8px;border-bottom:1px dashed var(--line);color:var(--ink)}
+  .wax-table th:not(:first-child),.wax-table td:not(:first-child){text-align:right;white-space:nowrap;font-weight:600;color:var(--blue-700)}
+  .wax-table tbody tr:last-child td{border-bottom:none}
+
   /* CONTACT */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   form .field{margin-bottom:18px}
@@ -221,6 +249,7 @@
     .hero h1{font-size:2.9rem}
     .hero-visual img{height:420px}
     .benefits,.svc-grid,.tgrid,.listings{grid-template-columns:repeat(2,1fr)}
+    #servicesCatGrid{grid-template-columns:repeat(2,1fr)}
     .steps{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr 1fr}
     .hero-badge{left:0}
@@ -236,8 +265,12 @@
     .hero h1{font-size:2.3rem}
     .section-head h2,.split h2,.cta-band h2{font-size:2rem}
     .benefits,.svc-grid,.tgrid,.listings,.steps,.foot-grid{grid-template-columns:1fr}
+    #servicesCatGrid{grid-template-columns:1fr}
     .hero-stats{gap:1.6rem}
     .cta-band{padding:50px 24px}
+    .price-cat{padding:26px 22px}
+    .price-row{flex-direction:column;gap:6px}
+    .pprice,.price-variants{text-align:left}
   }
 </style>
 </head>
@@ -518,30 +551,38 @@
 
   <section style="padding-top:20px">
     <div class="wrap">
-      <div class="svc-grid">
+      <div class="svc-grid" id="servicesCatGrid">
         <article class="svc">
           <img src="https://images.unsplash.com/photo-1618093970253-002eac767c04?auto=format&fit=crop&w=700&q=80" alt="Botox injectable vial bottle used for anti-wrinkle treatment" />
-          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Botox</h3><p>Relax dynamic wrinkles on the forehead, frown lines and crow's feet for a smooth, refreshed appearance.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Botulinum Toxins</h3><p>Precision Botox and Xeomin, dosed by the unit to relax expression lines with a natural finish.</p><div class="svc-price">From HK$100<small>per unit</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="toxins">View pricing →</a></div>
         </article>
         <article class="svc">
           <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Dermal filler facial contouring treatment" />
-          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Dermal Fillers</h3><p>Restore lost volume and define lips, cheeks, chin and jawline with premium hyaluronic acid fillers.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <div class="svc-body"><span class="svc-tag">Injectables</span><h3>Dermal Fillers</h3><p>Restore lost volume and define lips, cheeks, chin and jawline with premium hyaluronic acid fillers.</p><div class="svc-price">From HK$4,000<small>per ml</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="fillers">View pricing →</a></div>
         </article>
         <article class="svc">
           <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Profhilo bio-remodelling skin booster treatment" />
-          <div class="svc-body"><span class="svc-tag">Skin Boosters</span><h3>Profhilo</h3><p>An injectable bio-remodelling treatment that deeply hydrates, firms and improves overall skin quality.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <div class="svc-body"><span class="svc-tag">Bio-Remodelling</span><h3>Skin Boosters</h3><p>Profhilo, Rejuran and Belotero injectables that hydrate, firm and revive skin quality from within.</p><div class="svc-price">From HK$3,000<small>per ml</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="boosters">View pricing →</a></div>
         </article>
         <article class="svc">
           <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80" alt="Relaxing facial skincare treatment at the clinic" />
-          <div class="svc-body"><span class="svc-tag">Skin</span><h3>Signature Facials</h3><p>Bespoke medical-grade facials that cleanse, exfoliate and nourish for an instant healthy glow.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <div class="svc-body"><span class="svc-tag">Skin</span><h3>Facials &amp; Skin Care</h3><p>Bespoke medical-grade facials, PicoSure laser facials and add-ons for an instant, healthy glow.</p><div class="svc-price">From HK$1,000<small>per session</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="facials">View pricing →</a></div>
         </article>
         <article class="svc">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="IPL intense pulsed light skin treatment device" />
-          <div class="svc-body"><span class="svc-tag">Light Therapy</span><h3>IPL Photofacial</h3><p>Intense pulsed light to reduce pigmentation, redness and sun damage for clearer, even-toned skin.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Radiofrequency and microneedling device treatment" />
+          <div class="svc-body"><span class="svc-tag">Devices</span><h3>Radiofrequency &amp; Tightening</h3><p>Oligio, Exilis, Dermapen and Morpheus8 for firmer, tighter, more even-textured skin.</p><div class="svc-price">From HK$800<small>per session</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="rf">View pricing →</a></div>
         </article>
         <article class="svc">
           <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=80" alt="Laser skin rejuvenation treatment" />
-          <div class="svc-body"><span class="svc-tag">Laser</span><h3>Laser Treatments</h3><p>Advanced laser therapy for skin resurfacing, tightening and a smoother, more youthful complexion.</p><a href="#contact" data-link class="more">Book now →</a></div>
+          <div class="svc-body"><span class="svc-tag">Laser &amp; Light</span><h3>Laser Treatments</h3><p>Helios, CO2, PicoSure Pro and IPL (M22) laser therapy for pigmentation, texture and resurfacing.</p><div class="svc-price">From HK$1,000<small>per session</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="laser">View pricing →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Waxing treatment room at the clinic" />
+          <div class="svc-body"><span class="svc-tag">Body</span><h3>Waxing</h3><p>Full-body waxing for men and women, from brows and lip to legs, back and bikini.</p><div class="svc-price">From HK$120<small>per area</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="waxing">View pricing →</a></div>
+        </article>
+        <article class="svc">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="Advanced body and skin device treatment" />
+          <div class="svc-body"><span class="svc-tag">Advanced</span><h3>Body &amp; Advanced Treatments</h3><p>PCL Threads, Sculptra, Ultherapy, Mini FX and eyelash lamination for lifting, volume and finishing touches.</p><div class="svc-price">From HK$950<small>per session</small></div><a href="#listings" data-link class="more svc-cat-link" data-cat="others">View pricing →</a></div>
         </article>
       </div>
     </div>
@@ -591,70 +632,145 @@
   </section>
 </div>
 
-<!-- ============ LISTINGS / PORTFOLIO ============ -->
+<!-- ============ LISTINGS / PRICE LIST ============ -->
 <div class="page" id="listings">
   <section class="hero" style="padding:90px 0 50px">
     <div class="wrap" style="text-align:center;max-width:760px">
-      <p class="eyebrow">Portfolio</p>
-      <h1 style="font-size:3rem;margin:1rem 0">Our work &amp; treatments</h1>
-      <p class="lead" style="margin:0 auto">A glimpse of the treatments and natural-looking results our clients love. Filter by category to explore.</p>
+      <p class="eyebrow">Full Price List</p>
+      <h1 style="font-size:3rem;margin:1rem 0">Treatments &amp; pricing</h1>
+      <p class="lead" style="margin:0 auto">Every treatment we offer, organised by category, with transparent pricing so you know what to expect before you book.</p>
     </div>
   </section>
 
   <section style="padding-top:10px">
     <div class="wrap">
       <div class="filter-bar" id="filterBar">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="injectables">Injectables</button>
-        <button data-filter="skin">Skin &amp; Facial</button>
-        <button data-filter="laser">Laser &amp; IPL</button>
+        <button class="active" data-filter="all">All Treatments</button>
+        <button data-filter="toxins">Botulinum Toxins</button>
+        <button data-filter="fillers">Dermal Fillers</button>
+        <button data-filter="boosters">Skin Boosters</button>
+        <button data-filter="facials">Facials</button>
+        <button data-filter="rf">Radiofrequency</button>
+        <button data-filter="laser">Laser</button>
+        <button data-filter="waxing">Waxing</button>
+        <button data-filter="others">Body &amp; Advanced</button>
       </div>
-      <div class="listings" id="listingGrid">
-        <article class="lcard" data-cat="injectables">
-          <div class="imgwrap"><span class="cat">Botox</span><img src="https://images.unsplash.com/photo-1618015359860-99eb20ee6794?auto=format&fit=crop&w=700&q=80" alt="Botox bottle vials for anti-wrinkle treatment" /></div>
-          <div class="lcard-body"><h3>Anti-Wrinkle Refresh</h3><p>Smoothed forehead and frown lines for a naturally rested look.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="injectables">
-          <div class="imgwrap"><span class="cat">Fillers</span><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80" alt="Lip and cheek dermal filler result" /></div>
-          <div class="lcard-body"><h3>Lip &amp; Cheek Contour</h3><p>Subtle volume and definition with premium hyaluronic fillers.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="skin">
-          <div class="imgwrap"><span class="cat">Profhilo</span><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80" alt="Profhilo skin hydration treatment result" /></div>
-          <div class="lcard-body"><h3>Profhilo Glow</h3><p>Deeply hydrated, firmer skin with a luminous, healthy finish.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="skin">
-          <div class="imgwrap"><span class="cat">Facial</span><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80" alt="Signature facial skincare treatment" /></div>
-          <div class="lcard-body"><h3>Signature Facial</h3><p>Medical-grade facial for an instant, radiant complexion.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="laser">
-          <div class="imgwrap"><span class="cat">IPL</span><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80" alt="IPL photofacial light therapy treatment" /></div>
-          <div class="lcard-body"><h3>IPL Photofacial</h3><p>Reduced pigmentation and redness for clearer, even-toned skin.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="laser">
-          <div class="imgwrap"><span class="cat">Laser</span><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=80" alt="Laser skin rejuvenation and resurfacing treatment" /></div>
-          <div class="lcard-body"><h3>Laser Rejuvenation</h3><p>Smoother, tighter, more youthful skin with advanced laser therapy.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="skin">
-          <div class="imgwrap"><span class="cat">Skin</span><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Skin consultation and analysis at the clinic" /></div>
-          <div class="lcard-body"><h3>Skin Analysis</h3><p>In-depth skin assessment to build your personalised plan.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="injectables">
-          <div class="imgwrap"><span class="cat">Fillers</span><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=700&q=80" alt="Jawline contouring filler treatment" /></div>
-          <div class="lcard-body"><h3>Jawline Definition</h3><p>Sculpted, balanced profile with expertly placed fillers.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
-        <article class="lcard" data-cat="laser">
-          <div class="imgwrap"><span class="cat">Laser</span><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" alt="Laser hair and skin treatment in progress" /></div>
-          <div class="lcard-body"><h3>Skin Tightening</h3><p>Firmer, lifted skin texture with non-invasive laser tightening.</p><a href="#contact" data-link class="more">Book this →</a></div>
-        </article>
+
+      <div class="price-list" id="priceList">
+
+        <section class="price-cat" id="cat-toxins" data-cat="toxins">
+          <div class="price-cat-head"><h3>Botulinum Toxins</h3><p>Botox and Xeomin, priced per unit and dosed to your treatment area during consultation.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Botox</span><span class="pprice">HK$100<small>per unit</small></span></div>
+            <div class="price-row"><span class="pname">Xeomin</span><span class="pprice">HK$100<small>per unit</small></span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-fillers" data-cat="fillers">
+          <div class="price-cat-head"><h3>Dermal Fillers</h3><p>Premium hyaluronic acid fillers for volume, contour and definition.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Juvederm</span><span class="pprice">HK$5,000<small>per ml</small></span></div>
+            <div class="price-row"><span class="pname">Restylane Kysse</span><span class="pprice">HK$4,000<small>per ml</small></span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-boosters" data-cat="boosters">
+          <div class="price-cat-head"><h3>Skin Boosters</h3><p>Bio-remodelling injectables that hydrate, firm and improve overall skin quality.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Belotero Revive</span><span class="pprice">HK$3,500<small>per 2ml</small></span></div>
+            <div class="price-row"><span class="pname">Rejuran Healer (Black)</span><span class="price-variants"><div>By Injection — <b>HK$3,500</b>/ml</div><div>By Dermapen — <b>HK$3,000</b>/ml</div></span></div>
+            <div class="price-row"><span class="pname">Rejuran S (Blue)</span><span class="price-variants"><div>By Injection — <b>HK$3,500</b>/ml</div><div>By Dermapen — <b>HK$3,000</b>/ml</div></span></div>
+            <div class="price-row"><span class="pname">Rejuran I (White)</span><span class="price-variants"><div>By Injection — <b>HK$3,500</b>/ml</div><div>By Dermapen — <b>HK$3,000</b>/ml</div></span></div>
+            <div class="price-row"><span class="pname">Profhilo</span><span class="pprice">HK$4,000<small>per 2ml</small></span></div>
+            <div class="price-row"><span class="pname">Profhilo — Necklines by Cannula</span><span class="pprice">HK$5,500<small>per 2ml</small></span></div>
+            <div class="price-row"><span class="pname">Profhilo Structura</span><span class="pprice">HK$5,500<small>per 2ml</small></span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-facials" data-cat="facials">
+          <div class="price-cat-head"><h3>Facials &amp; Skin Care</h3><p>Medical-grade facials by our estheticians, plus targeted add-ons.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Deep Cleansing Facial</span><span class="pprice">HK$1,000<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Dr Jolie PicoSure Laser Facial</span><span class="pprice">HK$3,500<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Dermalogica Pro Pen (Lips)<span class="addon-tag">Add-on</span></span><span class="pprice">HK$500</span></div>
+            <div class="price-row"><span class="pname">Dermalogica Pro Pen (Eye)<span class="addon-tag">Add-on</span></span><span class="pprice">HK$500</span></div>
+            <div class="price-row"><span class="pname">Chemical Peel<span class="addon-tag">Add-on</span></span><span class="pprice">HK$300<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Carbon Facial<span class="addon-tag">Add-on</span></span><span class="pprice">HK$1,000</span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-rf" data-cat="rf">
+          <div class="price-cat-head"><h3>Radiofrequency &amp; Skin Tightening</h3><p>Device-led tightening and microneedling — Oligio, Exilis, Dermapen and Morpheus8.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Oligio (Lower Face)</span><span class="pprice">HK$5,000<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Oligio (Whole Face)</span><span class="pprice">HK$10,000<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Exilis Ultra 360 (Face)</span><span class="price-variants"><div>Trial Session — <b>HK$800</b></div><div>Single Session — <b>HK$1,500</b></div><div>Three Sessions — <b>HK$4,000</b></div></span></div>
+            <div class="price-row"><span class="pname">Exilis Ultra 360 (Body)</span><span class="pprice">HK$1,500<small>single session</small></span></div>
+            <div class="price-row"><span class="pname">Dermapen</span><span class="price-variants"><div>HA / Vitamin C — <b>HK$2,800</b></div><div>Exosomes — <b>HK$3,200</b></div><div>Exosomes (5 Sessions) — <b>HK$15,000</b></div></span></div>
+            <div class="price-row"><span class="pname">Skin Botox (Dermapen)<span class="addon-tag">Add-on</span></span><span class="pprice">HK$2,500</span></div>
+            <div class="price-row"><span class="pname">Morpheus8</span><span class="price-variants"><div>Face or Neck — <b>HK$5,000</b></div><div>Face + Neck — <b>HK$7,000</b></div><div>Abdomen — <b>HK$6,000</b></div></span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-laser" data-cat="laser">
+          <div class="price-cat-head"><h3>Laser Treatments</h3><p>Advanced laser and light therapy for pigmentation, resurfacing and tightening.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Helios Laser</span><span class="price-variants"><div>Single Session — <b>HK$1,500</b></div><div>Three Sessions — <b>HK$4,000</b></div></span></div>
+            <div class="price-row"><span class="pname">CO2 Laser</span><span class="price-variants"><div>Single Session — <b>HK$3,000</b></div><div>Three Sessions — <b>HK$8,000</b></div><div>Five Sessions — <b>HK$12,000</b></div></span></div>
+            <div class="price-row"><span class="pname">CO2 Laser (Undereye)</span><span class="pprice">HK$2,000<small>single session</small></span></div>
+            <div class="price-row"><span class="pname">PicoSure Pro <small style="display:block;color:var(--slate);font-weight:400;margin-top:2px">Pigmented lesions — melasma, tattoo removal &amp; more</small></span><span class="pprice">HK$6,000<small>incl. three top-ups</small></span></div>
+            <div class="price-row"><span class="pname">IPL (M22)</span><span class="price-variants"><div>Trial Session — <b>HK$1,000</b></div><div>Single Session — <b>HK$2,000</b></div><div>Three Sessions — <b>HK$5,400</b></div></span></div>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-waxing" data-cat="waxing">
+          <div class="price-cat-head"><h3>Waxing</h3><p>Full-body waxing for women and men, from brows and lip to legs, back and bikini.</p></div>
+          <div style="overflow-x:auto">
+            <table class="wax-table">
+              <thead><tr><th>Area</th><th>Female</th><th>Male</th></tr></thead>
+              <tbody>
+                <tr><td>Eyebrow</td><td>HK$200</td><td>HK$200</td></tr>
+                <tr><td>Upper Lip</td><td>HK$120</td><td>HK$120</td></tr>
+                <tr><td>Full Face — Including Eyebrows</td><td>HK$450</td><td>HK$550</td></tr>
+                <tr><td>Full Face — Not Including Eyebrows</td><td>HK$350</td><td>HK$450</td></tr>
+                <tr><td>Underarm</td><td>HK$200</td><td>HK$250</td></tr>
+                <tr><td>Half Arms</td><td>HK$200</td><td>HK$250</td></tr>
+                <tr><td>Full Arms</td><td>HK$300</td><td>HK$350</td></tr>
+                <tr><td>Chest</td><td>HK$300</td><td>HK$400</td></tr>
+                <tr><td>Back of Neck</td><td>HK$150</td><td>HK$150</td></tr>
+                <tr><td>Back</td><td>HK$350</td><td>HK$500</td></tr>
+                <tr><td>Lower Legs</td><td>HK$300</td><td>HK$350</td></tr>
+                <tr><td>Full Legs</td><td>HK$500</td><td>HK$600</td></tr>
+                <tr><td>Bikini</td><td>HK$250</td><td>—</td></tr>
+                <tr><td>G-String</td><td>HK$300</td><td>—</td></tr>
+                <tr><td>Hollywood</td><td>HK$500</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="price-cat" id="cat-others" data-cat="others">
+          <div class="price-cat-head"><h3>Body &amp; Advanced Treatments</h3><p>Threads, Sculptra, Ultherapy and more, for lifting, volume and finishing touches.</p></div>
+          <div class="price-table">
+            <div class="price-row"><span class="pname">Threads <small style="display:block;color:var(--slate);font-weight:400;margin-top:2px">12 PCL Threads</small></span><span class="pprice">HK$12,000</span></div>
+            <div class="price-row"><span class="pname">Sculptra</span><span class="pprice">HK$5,000<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Eyelash Lamination</span><span class="pprice">HK$950<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Mini FX</span><span class="pprice">HK$1,500<small>per session</small></span></div>
+            <div class="price-row"><span class="pname">Ultherapy</span><span class="pprice">HK$8,000<small>+HK$30 per line</small></span></div>
+          </div>
+        </section>
+
       </div>
+
+      <p class="price-note" style="margin-top:22px">All prices are listed in Hong Kong Dollars (HK$). Final pricing is confirmed with your doctor at consultation, based on treatment area, product quantity and your individual plan.</p>
     </div>
   </section>
 
   <section class="alt">
     <div class="wrap">
       <div class="cta-band">
-        <h2>Love what you see?</h2>
-        <p>Your results start with a conversation. Book your consultation with Dr Jolie today.</p>
+        <h2>Ready to book?</h2>
+        <p>Choose your treatment above and book a consultation with Dr Jolie to confirm your personalised plan.</p>
         <a href="#contact" data-link class="btn btn-light">Book a Consultation</a>
       </div>
     </div>
@@ -765,6 +881,12 @@
 </footer>
 
 <script>
+  // ---- Mobile menu ----
+  const burger=document.getElementById('burger');
+  const navLinks=document.getElementById('navLinks');
+  function closeMenu(){burger.classList.remove('open');navLinks.classList.remove('mobile');}
+  burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('mobile');});
+
   // ---- Page routing ----
   const pages = document.querySelectorAll('.page');
   const navAnchors = document.querySelectorAll('#navLinks a[data-link]');
@@ -792,12 +914,6 @@
   window.addEventListener('hashchange',route);
   route();
 
-  // ---- Mobile menu ----
-  const burger=document.getElementById('burger');
-  const navLinks=document.getElementById('navLinks');
-  function closeMenu(){burger.classList.remove('open');navLinks.classList.remove('mobile');}
-  burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('mobile');});
-
   // ---- FAQ ----
   document.querySelectorAll('.faq-q').forEach(q=>{
     q.addEventListener('click',()=>{
@@ -807,19 +923,32 @@
     });
   });
 
-  // ---- Listings filter ----
+  // ---- Price list filter ----
   const fbar=document.getElementById('filterBar');
+  function applyFilter(catKey){
+    if(!fbar)return;
+    fbar.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b.dataset.filter===catKey));
+    document.querySelectorAll('#priceList .price-cat').forEach(c=>{
+      c.style.display=(catKey==='all'||c.dataset.cat===catKey)?'':'none';
+    });
+  }
   if(fbar){
     fbar.addEventListener('click',e=>{
       if(e.target.tagName!=='BUTTON')return;
-      fbar.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-      e.target.classList.add('active');
-      const f=e.target.dataset.filter;
-      document.querySelectorAll('#listingGrid .lcard').forEach(c=>{
-        c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
-      });
+      applyFilter(e.target.dataset.filter);
     });
   }
+
+  // ---- Jump from a Services category straight to its priced section ----
+  document.querySelectorAll('.svc-cat-link').forEach(a=>{
+    a.addEventListener('click',()=>{
+      const cat=a.dataset.cat;
+      setTimeout(()=>{
+        applyFilter(cat);
+        document.getElementById('cat-'+cat)?.scrollIntoView({behavior:'smooth',block:'start'});
+      },60);
+    });
+  });
 
   // ---- Contact form ----
   const form=document.getElementById('contactForm');
