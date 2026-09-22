@@ -13,6 +13,9 @@
 <meta property="og:description" content="Premium aesthetic treatments in Jordan, Hong Kong — Botox, Fillers, Profhilo, Facials, IPL &amp; Laser." />
 <meta property="og:type" content="website" />
 <link rel="canonical" href="https://drjolie.com/" />
+<link rel="alternate" hreflang="en" href="https://drjolie.com/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://drjolie.com/?lang=zh" />
+<link rel="alternate" hreflang="x-default" href="https://drjolie.com/" />
 <meta property="og:url" content="https://drjolie.com/" />
 <meta property="og:image" content="https://drjolie.com/assets/logo.png" />
 <meta property="og:image:alt" content="Dr Jolie Beaute &amp; Aesthetic Centre logo" />
@@ -250,6 +253,20 @@
   .socials a:hover{background:var(--blue-500)}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;text-align:center;font-size:.82rem;color:#7fa3cc}
 
+  /* LANGUAGE SWITCH */
+  .lang-switch{display:inline-flex;align-items:center;background:var(--blue-50);border:1px solid var(--line);border-radius:50px;padding:3px;gap:2px}
+  .lang-switch button{font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.04em;color:var(--slate);background:none;border:none;border-radius:50px;padding:.34rem .72rem;cursor:pointer;transition:.2s;white-space:nowrap}
+  .lang-switch button:hover{color:var(--blue-700)}
+  .lang-switch button[aria-pressed="true"]{background:#fff;color:var(--blue-700);font-weight:600;box-shadow:var(--shadow-sm)}
+
+  /* CHINESE TYPOGRAPHY — the Latin webfonts carry no Chinese glyphs, so swap in a CJK stack */
+  html[lang^="zh"] body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",var(--sans);font-weight:400}
+  html[lang^="zh"] h1,html[lang^="zh"] h2,html[lang^="zh"] h3,html[lang^="zh"] h4{font-family:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",var(--serif);letter-spacing:.01em}
+  html[lang^="zh"] .hero h1{font-size:3.2rem}
+  html[lang^="zh"] .eyebrow,html[lang^="zh"] .trust span,html[lang^="zh"] .svc-tag,html[lang^="zh"] .logo small{letter-spacing:.1em}
+  html[lang^="zh"] .tcard p{font-style:normal}
+  html[lang^="zh"] .hero h1 em{font-style:normal}
+
   /* RESPONSIVE */
   @media(max-width:980px){
     .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
@@ -270,6 +287,8 @@
     .nav-links.mobile li.mobile-only{display:block}
     .nav-links.mobile .btn{display:inline-flex;margin-top:.5rem}
     .hero h1{font-size:2.3rem}
+    html[lang^="zh"] .hero h1{font-size:2.1rem}
+    .lang-switch button{font-size:.74rem;padding:.3rem .6rem}
     .section-head h2,.split h2,.cta-band h2{font-size:2rem}
     .benefits,.svc-grid,.tgrid,.listings,.steps,.foot-grid{grid-template-columns:1fr}
     #servicesCatGrid{grid-template-columns:1fr}
@@ -299,6 +318,10 @@
       <li class="mobile-only"><a href="#contact" data-link class="btn btn-primary" style="color:#fff">Book a Consultation</a></li>
     </ul>
     <div class="nav-cta">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans">简体中文</button>
+      </div>
       <a href="#contact" data-link class="btn btn-primary">Book a Consultation</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -313,7 +336,7 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Beaute &amp; Aesthetic Centre · Hong Kong</p>
-        <h1>Reveal your most <em>radiant</em> skin, naturally.</h1>
+        <h1 data-i18n-html="heroHeadline">Reveal your most <em>radiant</em> skin, naturally.</h1>
         <p class="lead">Doctor-led Botox, dermal fillers, Profhilo, advanced facials, IPL and laser — delivered with precision and care in the heart of Jordan, Kowloon.</p>
         <div class="hero-cta">
           <a href="#contact" data-link class="btn btn-primary">Book a Consultation</a>
@@ -962,7 +985,8 @@
   form.addEventListener('submit',e=>{
     e.preventDefault();
     if(!form.name.value.trim()||!form.email.value.trim()){
-      alert('Please enter your name and email.');return;
+      const msg='Please enter your name and email.';
+      alert(window.t?window.t(msg):msg);return;
     }
     document.getElementById('formSuccess').style.display='block';
     form.reset();
@@ -970,6 +994,450 @@
 
   // ---- Year ----
   document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+
+<!-- =====================================================================
+     LANGUAGE SWITCH — English / 简体中文
+     ---------------------------------------------------------------------
+     TO EDIT THE CHINESE WORDING: find the English line on the left and
+     change the Chinese text on the right. Keep the English exactly as it
+     appears on the page — that is how the two are matched up.
+     Anything not listed here simply stays in English (brand names such as
+     Botox, Profhilo, Rejuran and Morpheus8 are left in English on purpose).
+     ===================================================================== -->
+<script>
+(function(){
+  "use strict";
+
+  var ZH = {
+
+    /* ---------- Navigation, buttons & shared wording ---------- */
+    "Beaute & Aesthetic": "美容医学中心",
+    "Home": "主页",
+    "About": "关于我们",
+    "Services": "服务项目",
+    "Listings": "价格表",
+    "Contact": "联系我们",
+    "Book a Consultation": "预约咨询",
+    "Book Your Consultation": "立即预约咨询",
+    "Menu": "菜单",
+    "Treatments": "疗程项目",
+    "Dr Jolie Beaute & Aesthetic Centre": "Dr Jolie 美容医学中心",
+
+    /* ---------- Page title & search description ---------- */
+    "Dr Jolie Beaute & Aesthetic Centre | Botox, Fillers, Profhilo & Laser in Hong Kong": "Dr Jolie 美容医学中心 | 香港肉毒杆菌素、填充剂、Profhilo 与激光疗程",
+    "Dr Jolie Beaute & Aesthetic Centre in Jordan, Hong Kong. Premium Botox, dermal fillers, Profhilo, skin facials, IPL and laser treatments. Book your consultation today.": "Dr Jolie 美容医学中心位于香港佐敦。提供高端肉毒杆菌素、皮肤填充剂、Profhilo、医学美容面部护理、IPL 及激光疗程。立即预约咨询。",
+
+    /* ---------- Home: hero ---------- */
+    "Beaute & Aesthetic Centre · Hong Kong": "美容医学中心 · 香港",
+    "Doctor-led Botox, dermal fillers, Profhilo, advanced facials, IPL and laser — delivered with precision and care in the heart of Jordan, Kowloon.": "由注册医生主理的肉毒杆菌素、皮肤填充剂、Profhilo、进阶面部护理、IPL 及激光疗程 —— 在九龙佐敦核心地段，以精准与细致的照护为您呈现。",
+    "Explore Treatments": "浏览疗程",
+    "Treatments delivered": "已完成疗程",
+    "Average client rating": "客户平均评分",
+    "Years of expertise": "年专业经验",
+    "Doctor-Led Care": "医生主理",
+    "Safe, certified & personalised": "安全认证 · 度身订造",
+
+    /* ---------- Home: trust strip ---------- */
+    "Licensed Medical Doctors": "注册医生主理",
+    "FDA-Approved Products": "FDA 认证产品",
+    "Personalised Treatment Plans": "个人化疗程方案",
+    "Discreet Jordan MTR Location": "佐敦港铁站私密位置",
+
+    /* ---------- Home: why Dr Jolie ---------- */
+    "Why Dr Jolie": "为何选择 Dr Jolie",
+    "Aesthetics, elevated by expertise": "以专业，成就美学",
+    "Every treatment begins with a thorough consultation and ends with results that look like the best version of you.": "每一次疗程都由详尽咨询开始，以最好状态的您作结。",
+    "Natural-Looking Results": "自然不着痕迹",
+    "We enhance, never overdo. Subtle, balanced outcomes that respect your unique features and refresh your confidence.": "我们只作提升，绝不过度。细致而平衡的效果，尊重您独有的五官轮廓，重拾自信光采。",
+    "Safety First, Always": "安全始终第一",
+    "Medical-grade products, sterile protocols and qualified doctors. Your wellbeing guides every decision we make.": "医疗级产品、严格无菌流程与合资格医生。您的健康，是我们每一个决定的依归。",
+    "Tailored To You": "为您度身订造",
+    "No two faces are alike. We design bespoke plans around your goals, skin type and lifestyle — not a one-size template.": "没有两张相同的面孔。我们按您的目标、肤质与生活习惯设计专属方案，而非千篇一律的套餐。",
+
+    /* ---------- Home: signature treatments ---------- */
+    "Signature Treatments": "招牌疗程",
+    "Our most-loved services": "最受欢迎的服务",
+    "From injectables to advanced skin therapies — a curated menu for face and skin rejuvenation.": "由注射疗程到进阶皮肤治疗 —— 为面部与肌肤年轻化精心编排的疗程菜单。",
+    "Injectables": "注射疗程",
+    "Botox & Anti-Wrinkle": "肉毒杆菌素与抗皱",
+    "Smooth fine lines and soften expression wrinkles for a refreshed, well-rested look.": "抚平细纹、柔化表情纹，回复神采奕奕的轻盈感。",
+    "Dermal Fillers": "皮肤填充剂",
+    "Restore volume, sculpt contours and rejuvenate lips, cheeks and jawline with precision.": "精准回复丰盈度、雕塑轮廓，让唇部、面颊与下颌线重现年轻。",
+    "Skin Boosters": "肌肤修护针剂",
+    "Bio-remodelling that deeply hydrates and firms skin from within for a luminous glow.": "生物重塑技术由内而外深层补湿与紧致，绽放透亮光采。",
+    "Learn more →": "了解更多 →",
+    "View All Services": "查看所有服务",
+
+    /* ---------- Home: testimonials ---------- */
+    "Client Love": "客户评价",
+    "What our clients say": "客户怎么说",
+    "\"The most natural Botox I've ever had. Dr Jolie really listens and the clinic feels so calm and premium.\"": "「这是我做过最自然的肉毒杆菌素疗程。Dr Jolie 会真正聆听，诊所环境宁静而高雅。」",
+    "Central, Hong Kong": "香港中环",
+    "\"My skin has never looked better after Profhilo. Professional, painless and the results speak for themselves.\"": "「做完 Profhilo 后，我的皮肤从未如此好过。专业、无痛，效果有目共睹。」",
+    "Tsim Sha Tsui": "尖沙咀",
+    "\"Booked for fillers and left feeling like myself, only fresher. I trust no one else with my face now.\"": "「做了填充后，我依然是我，只是更有神采。现在我只放心把面部交给这里。」",
+    "Kowloon": "九龙",
+
+    /* ---------- Home: about preview & closing ---------- */
+    "About Dr Jolie": "关于 Dr Jolie",
+    "Where medical precision meets beauty": "医学精准，遇上美学",
+    "Dr Jolie Beaute & Aesthetic Centre was founded on a simple belief: aesthetic medicine should feel safe, personal and empowering. We combine clinical excellence with an artist's eye for balance.": "Dr Jolie 美容医学中心源于一个简单信念：医学美容应当安全、贴心，并让人更有自信。我们把临床专业与艺术家对平衡的眼光结合起来。",
+    "Doctor-led consultations, never rushed": "医生亲自咨询，绝不匆忙",
+    "Premium, regulated products only": "只用高端且受规管的产品",
+    "A discreet, calming environment": "私密而宁静的环境",
+    "Read Our Story": "阅读我们的故事",
+    "Ready to glow?": "准备好焕发光采了吗？",
+    "Book a personalised consultation with Dr Jolie and discover the treatment plan that's right for you.": "预约 Dr Jolie 的个人化咨询，找到最适合您的疗程方案。",
+
+    /* ---------- About page ---------- */
+    "Our Story": "我们的故事",
+    "Beauty, backed by medicine": "以医学为本的美",
+    "A Hong Kong aesthetic centre built on trust, artistry and genuine care for every client who walks through our doors.": "一所建立于信任、美学与真诚照护之上的香港美容医学中心，用心对待每一位到访的客人。",
+    "The Beginning": "起点",
+    "A clinic built on confidence": "为自信而建的诊所",
+    "Dr Jolie Beaute & Aesthetic Centre was created to bridge the gap between clinical safety and beautiful, natural results. Too often, clients felt rushed or pushed toward treatments they didn't need. We do things differently.": "Dr Jolie 美容医学中心的成立，是为了在临床安全与自然美观的效果之间架起桥梁。太多客人曾被催促，或被推销并不需要的疗程。我们选择不一样的做法。",
+    "Located on Nathan Road in Jordan, our centre offers a serene, private space where every client is seen, heard and cared for by qualified medical professionals.": "中心位于佐敦弥敦道，提供宁静私密的空间，让每位客人都获得合资格医疗团队的关注、聆听与照护。",
+    "Our Mission": "我们的使命",
+    "Helping Hong Kong feel its best": "让香港以最佳状态示人",
+    "Our mission is to deliver aesthetic treatments that enhance your natural beauty while prioritising your health, comfort and confidence. We believe great aesthetic medicine is invisible — people should notice you, not your treatment.": "我们的使命，是在优先考虑您的健康、舒适与自信的前提下，透过疗程提升您的自然之美。真正出色的医学美容是看不见的 —— 别人应该留意到您本人，而不是您做过的疗程。",
+    "From your first consultation to your aftercare, we're committed to honesty, transparency and results you'll genuinely love.": "由首次咨询到术后护理，我们坚持诚实、透明，以及您真心喜爱的效果。",
+    "What Makes Us Different": "我们的不同之处",
+    "The Dr Jolie difference": "Dr Jolie 的与众不同",
+    "Doctor-Led, Always": "始终由医生主理",
+    "Treatments are planned and performed by qualified medical doctors — not technicians — for your safety and the best outcomes.": "所有疗程均由合资格医生规划及施行 —— 而非美容技师 —— 确保您的安全与最佳效果。",
+    "No-Rush Consultations": "从容不迫的咨询",
+    "We take the time to understand your goals and explain your options honestly — never pressuring, always advising.": "我们花时间了解您的目标，并诚实解释各种选择 —— 只提供建议，绝不施压。",
+    "Premium Standards": "高端标准",
+    "Only regulated, clinically proven products and the latest devices, in an immaculate, calming environment.": "只采用受规管、经临床验证的产品与最新仪器，置身一尘不染而宁静的环境。",
+    "Come and meet us": "欢迎亲临了解",
+    "Book a relaxed, no-obligation consultation and see why our clients keep coming back.": "预约一次轻松、无附带条件的咨询，亲身了解客人一再回访的原因。",
+
+    /* ---------- Services page: treatment cards ---------- */
+    "Our aesthetic services": "我们的医学美容服务",
+    "A complete menu of doctor-led face and skin treatments, tailored to your goals.": "完整的医生主理面部与肌肤疗程菜单，按您的目标度身订造。",
+    "Botulinum Toxins": "肉毒杆菌素",
+    "Precision Botox and Xeomin, dosed by the unit to relax expression lines with a natural finish.": "精准的 Botox 与 Xeomin，按单位计算剂量，放松表情纹，效果自然。",
+    "Restore lost volume and define lips, cheeks, chin and jawline with premium hyaluronic acid fillers.": "以高端透明质酸填充剂回复流失的丰盈度，勾勒唇部、面颊、下巴与下颌线。",
+    "Bio-Remodelling": "生物重塑",
+    "Profhilo, Rejuran and Belotero injectables that hydrate, firm and revive skin quality from within.": "Profhilo、Rejuran 与 Belotero 注射疗程，由内而外补湿、紧致，改善肤质。",
+    "Skin": "肌肤护理",
+    "Facials & Skin Care": "面部护理与肌肤保养",
+    "Bespoke medical-grade facials, PicoSure laser facials and add-ons for an instant, healthy glow.": "度身订造的医疗级面部护理、PicoSure 激光面部疗程及加购项目，即时呈现健康光采。",
+    "Devices": "仪器疗程",
+    "Radiofrequency & Tightening": "射频与紧致",
+    "Oligio, Exilis, Dermapen and Morpheus8 for firmer, tighter, more even-textured skin.": "Oligio、Exilis、Dermapen 与 Morpheus8，令肌肤更紧致结实、质感更均匀。",
+    "Laser & Light": "激光与光学",
+    "Laser Treatments": "激光疗程",
+    "Helios, CO2, PicoSure Pro and IPL (M22) laser therapy for pigmentation, texture and resurfacing.": "Helios、CO2、PicoSure Pro 与 IPL (M22) 激光疗法，改善色斑、肤质并作皮肤重塑。",
+    "Body": "身体护理",
+    "Waxing": "脱毛",
+    "Full-body waxing for men and women, from brows and lip to legs, back and bikini.": "男女全身脱毛服务，由眉部、唇上至腿部、背部及比坚尼线。",
+    "Advanced": "进阶疗程",
+    "Body & Advanced Treatments": "身体与进阶疗程",
+    "PCL Threads, Sculptra, Ultherapy, Mini FX and eyelash lamination for lifting, volume and finishing touches.": "PCL 埋线、Sculptra、Ultherapy、Mini FX 及睫毛塑形，用于提升、丰盈与细节修饰。",
+    "View pricing →": "查看价格 →",
+    "From HK$100": "HK$100 起",
+    "From HK$120": "HK$120 起",
+    "From HK$800": "HK$800 起",
+    "From HK$950": "HK$950 起",
+    "From HK$1,000": "HK$1,000 起",
+    "From HK$3,000": "HK$3,000 起",
+    "From HK$4,000": "HK$4,000 起",
+
+    /* ---------- Services page: how it works ---------- */
+    "How It Works": "疗程流程",
+    "Your journey with us": "您的疗程旅程",
+    "Consultation": "咨询",
+    "We listen to your goals and assess your skin and facial structure in a relaxed, private setting.": "在轻松私密的环境中聆听您的目标，评估您的肤质与面部结构。",
+    "Tailored Plan": "专属方案",
+    "Your doctor designs a personalised treatment plan with honest advice and transparent pricing.": "医生为您设计个人化疗程方案，提供诚实建议与透明收费。",
+    "Treatment": "疗程进行",
+    "Your treatment is performed with precision, comfort and the highest safety standards.": "以精准手法、舒适体验与最高安全标准进行疗程。",
+    "Aftercare": "术后护理",
+    "We guide you through recovery and follow up to ensure you love your results.": "我们会指导您度过恢复期并跟进，确保您满意效果。",
+
+    /* ---------- Services page: FAQ ---------- */
+    "Questions": "常见疑问",
+    "Frequently asked": "常见问题",
+    "Is Botox safe?": "肉毒杆菌素安全吗？",
+    "Yes. When administered by qualified medical doctors using regulated products, Botox has an excellent safety record. We assess your suitability during consultation and explain everything beforehand.": "安全。由合资格医生使用受规管产品施行时，肉毒杆菌素拥有极佳的安全纪录。我们会在咨询时评估您是否适合，并预先详细讲解。",
+    "How long do fillers last?": "填充剂可维持多久？",
+    "Most dermal fillers last between 6 and 18 months depending on the product and treatment area. We'll advise on the best option and maintenance schedule for you.": "大部分皮肤填充剂可维持 6 至 18 个月，视乎产品与治疗部位而定。我们会为您建议最合适的选择与保养周期。",
+    "What is Profhilo and how is it different?": "Profhilo 是什么？有何不同？",
+    "Profhilo is a bio-remodelling injectable that uses pure hyaluronic acid to hydrate and stimulate collagen across a wider area, improving overall skin quality rather than adding volume to one spot.": "Profhilo 是一种生物重塑注射疗程，使用纯透明质酸在更大范围内补湿并刺激胶原蛋白增生，重点在于整体肤质改善，而非为单一部位增加丰盈度。",
+    "Is there any downtime?": "需要恢复期吗？",
+    "Most treatments have minimal downtime. You may experience slight redness or swelling that settles quickly. We provide full aftercare guidance for every treatment.": "大部分疗程的恢复期极短。您可能出现轻微泛红或肿胀，但很快消退。每项疗程我们都会提供完整的术后护理指引。",
+    "How do I book a consultation?": "如何预约咨询？",
+    "Simply use our contact form, call us on +852 6628 6127, or message us on Instagram @joliebeaute_hk. We'll find a time that suits you.": "只需填写我们的联络表格、致电 +852 6628 6127，或于 Instagram @joliebeaute_hk 传讯息给我们。我们会安排最适合您的时间。",
+    "Not sure which treatment is right?": "不确定哪种疗程适合自己？",
+    "Book a consultation and let our doctors recommend the perfect plan for your skin and goals.": "预约咨询，让我们的医生按您的肤质与目标推荐最合适的方案。",
+
+    /* ---------- Price list: headings & filters ---------- */
+    "Full Price List": "完整价格表",
+    "Treatments & pricing": "疗程与收费",
+    "Every treatment we offer, organised by category, with transparent pricing so you know what to expect before you book.": "我们提供的所有疗程按类别列出，收费透明，让您在预约前心中有数。",
+    "All Treatments": "所有疗程",
+    "Facials": "面部护理",
+    "Radiofrequency": "射频",
+    "Laser": "激光",
+    "Body & Advanced": "身体与进阶",
+    "Botox and Xeomin, priced per unit and dosed to your treatment area during consultation.": "Botox 与 Xeomin 按单位收费，剂量于咨询时按治疗部位决定。",
+    "Premium hyaluronic acid fillers for volume, contour and definition.": "高端透明质酸填充剂，用于增加丰盈度、修饰轮廓与勾勒线条。",
+    "Bio-remodelling injectables that hydrate, firm and improve overall skin quality.": "生物重塑注射疗程，补湿、紧致并全面改善肤质。",
+    "Medical-grade facials by our estheticians, plus targeted add-ons.": "由美容师施行的医疗级面部护理，另设针对性加购项目。",
+    "Radiofrequency & Skin Tightening": "射频与肌肤紧致",
+    "Device-led tightening and microneedling — Oligio, Exilis, Dermapen and Morpheus8.": "以仪器为主的紧致与微针疗程 —— Oligio、Exilis、Dermapen 及 Morpheus8。",
+    "Advanced laser and light therapy for pigmentation, resurfacing and tightening.": "进阶激光与光学疗法，针对色斑、皮肤重塑与紧致。",
+    "Full-body waxing for women and men, from brows and lip to legs, back and bikini.": "男女全身脱毛服务，由眉部、唇上至腿部、背部及比坚尼线。",
+    "Threads, Sculptra, Ultherapy and more, for lifting, volume and finishing touches.": "埋线、Sculptra、Ultherapy 等疗程，用于提升、丰盈与细节修饰。",
+
+    /* ---------- Price list: treatment names ---------- */
+    "Rejuran Healer (Black)": "Rejuran Healer（黑色）",
+    "Rejuran S (Blue)": "Rejuran S（蓝色）",
+    "Rejuran I (White)": "Rejuran I（白色）",
+    "Profhilo — Necklines by Cannula": "Profhilo —— 钝针颈纹疗程",
+    "Deep Cleansing Facial": "深层清洁面部护理",
+    "Dr Jolie PicoSure Laser Facial": "Dr Jolie PicoSure 激光面部护理",
+    "Dermalogica Pro Pen (Lips)": "Dermalogica Pro Pen（唇部）",
+    "Dermalogica Pro Pen (Eye)": "Dermalogica Pro Pen（眼部）",
+    "Add-on": "加购",
+    "Chemical Peel": "化学换肤",
+    "Carbon Facial": "黑脸娃娃（碳粉激光）",
+    "Oligio (Lower Face)": "Oligio（下半面）",
+    "Oligio (Whole Face)": "Oligio（全面部）",
+    "Exilis Ultra 360 (Face)": "Exilis Ultra 360（面部）",
+    "Exilis Ultra 360 (Body)": "Exilis Ultra 360（身体）",
+    "Skin Botox (Dermapen)": "水光肉毒（Dermapen）",
+    "Helios Laser": "Helios 激光",
+    "CO2 Laser": "CO2 激光",
+    "CO2 Laser (Undereye)": "CO2 激光（眼下）",
+    "Pigmented lesions — melasma, tattoo removal & more": "色素性病变 —— 黄褐斑、洗纹身等",
+    "Threads": "埋线",
+    "12 PCL Threads": "12 条 PCL 线",
+    "Eyelash Lamination": "睫毛塑形",
+
+    /* ---------- Price list: units & session options ---------- */
+    "per unit": "每单位",
+    "per ml": "每毫升",
+    "per 2ml": "每 2 毫升",
+    "per session": "每次疗程",
+    "per area": "每个部位",
+    "single session": "单次疗程",
+    "incl. three top-ups": "包含三次补做",
+    "+HK$30 per line": "每条线 +HK$30",
+    "/ml": "/毫升",
+    "By Injection —": "注射方式 —",
+    "By Dermapen —": "Dermapen 方式 —",
+    "Trial Session —": "体验疗程 —",
+    "Single Session —": "单次疗程 —",
+    "Three Sessions —": "三次疗程 —",
+    "Five Sessions —": "五次疗程 —",
+    "HA / Vitamin C —": "透明质酸 / 维他命 C —",
+    "Exosomes —": "外泌体 —",
+    "Exosomes (5 Sessions) —": "外泌体（5 次疗程）—",
+    "Face or Neck —": "面部或颈部 —",
+    "Face + Neck —": "面部 + 颈部 —",
+    "Abdomen —": "腹部 —",
+
+    /* ---------- Price list: waxing table ---------- */
+    "Area": "部位",
+    "Female": "女士",
+    "Male": "男士",
+    "Eyebrow": "眉部",
+    "Upper Lip": "唇上",
+    "Full Face — Including Eyebrows": "全面部 —— 包括眉部",
+    "Full Face — Not Including Eyebrows": "全面部 —— 不包括眉部",
+    "Underarm": "腋下",
+    "Half Arms": "半截手臂",
+    "Full Arms": "全手臂",
+    "Chest": "胸部",
+    "Back of Neck": "颈后",
+    "Back": "背部",
+    "Lower Legs": "小腿",
+    "Full Legs": "全腿",
+    "Bikini": "比坚尼线",
+    "G-String": "G 字线",
+    "Hollywood": "全脱（Hollywood）",
+    "All prices are listed in Hong Kong Dollars (HK$). Final pricing is confirmed with your doctor at consultation, based on treatment area, product quantity and your individual plan.": "所有价格以港币（HK$）标示。最终收费由医生于咨询时按治疗部位、产品用量及您的个人方案确认。",
+    "Ready to book?": "准备好预约了吗？",
+    "Choose your treatment above and book a consultation with Dr Jolie to confirm your personalised plan.": "在上方选择您心仪的疗程，并预约 Dr Jolie 咨询，确认您的专属方案。",
+
+    /* ---------- Contact page ---------- */
+    "Get In Touch": "联络我们",
+    "Book your consultation": "预约您的咨询",
+    "We'd love to hear from you. Send us a message and our team will be in touch shortly.": "我们很乐意听到您的声音。留下讯息，我们的团队会尽快与您联络。",
+    "Your Name": "您的姓名",
+    "Enter your name": "请输入姓名",
+    "Email": "电邮",
+    "Phone": "电话",
+    "Treatment of Interest": "感兴趣的疗程",
+    "Facial": "面部护理",
+    "Not sure yet": "尚未决定",
+    "Message": "讯息",
+    "Tell us what you'd like to achieve...": "告诉我们您希望达到的效果……",
+    "Send Message": "发送讯息",
+    "By submitting, you agree to be contacted about your enquiry. We respect your privacy.": "提交即表示您同意我们就您的查询与您联络。我们尊重您的私隐。",
+    "Thank you! Your message has been received. Our team will contact you shortly.": "感谢您！我们已收到您的讯息，团队会尽快与您联络。",
+    "Please enter your name and email.": "请输入您的姓名和电邮。",
+    "Visit Us": "到访地址",
+    "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, Hong Kong": "香港佐敦弥敦道 301-309 号 12 楼 1209 室",
+    "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, HK": "香港佐敦弥敦道 301-309 号 12 楼 1209 室",
+    "Call Us": "致电我们",
+    "Map to Dr Jolie Beaute & Aesthetic Centre, Nathan Road Jordan": "前往佐敦弥敦道 Dr Jolie 美容医学中心的地图",
+
+    /* ---------- Footer ---------- */
+    "Doctor-led aesthetic medicine in the heart of Jordan, Hong Kong. Botox, fillers, Profhilo, facials, IPL & laser.": "位于香港佐敦核心地段的医生主理医学美容中心。提供肉毒杆菌素、填充剂、Profhilo、面部护理、IPL 及激光疗程。",
+    "Explore": "浏览",
+    "IPL & Laser": "IPL 与激光",
+    "Dr Jolie Beaute & Aesthetic Centre. All rights reserved. · Jordan, Hong Kong": "Dr Jolie 美容医学中心。版权所有。· 香港佐敦",
+
+    /* ---------- Image descriptions (for screen readers & search) ---------- */
+    "Relaxed client receiving a professional aesthetic skin treatment at Dr Jolie clinic": "客人在 Dr Jolie 诊所接受专业医学美容护理",
+    "Botox vials and injectable treatment bottles at the clinic": "诊所内的肉毒杆菌素针剂瓶",
+    "Dermal filler treatment for facial contouring and volume restoration": "用于面部轮廓修饰与回复丰盈度的填充剂疗程",
+    "Profhilo bio-remodelling skin hydration treatment": "Profhilo 生物重塑补湿疗程",
+    "Portrait of client Wing L.": "客人 Wing L. 的照片",
+    "Portrait of client Carmen T.": "客人 Carmen T. 的照片",
+    "Portrait of client Priya S.": "客人 Priya S. 的照片",
+    "Calm, private treatment room at Dr Jolie, prepared with fresh towels and skincare products": "Dr Jolie 宁静私密的疗程房间，已备好干净毛巾与护肤产品",
+    "Doctor in a modern aesthetic clinic consulting with a client": "医生在现代化医学美容诊所为客人咨询",
+    "Client receiving a gentle facial skin treatment at Dr Jolie": "客人在 Dr Jolie 接受温和的面部护理",
+    "Botox injectable vial bottle used for anti-wrinkle treatment": "用于抗皱疗程的肉毒杆菌素针剂瓶",
+    "Dermal filler facial contouring treatment": "面部轮廓填充疗程",
+    "Profhilo bio-remodelling skin booster treatment": "Profhilo 生物重塑肌肤修护疗程",
+    "Relaxing facial skincare treatment at the clinic": "诊所内舒缓的面部护理疗程",
+    "Radiofrequency and microneedling device treatment": "射频与微针仪器疗程",
+    "Laser skin rejuvenation treatment": "激光肌肤年轻化疗程",
+    "Waxing treatment room at the clinic": "诊所的脱毛疗程房间",
+    "Advanced body and skin device treatment": "进阶身体与肌肤仪器疗程"
+  };
+
+  /* Headings that contain their own styling tags are swapped whole. */
+  var ZH_HTML = {
+    heroHeadline: "唤醒最<em>光采</em>的肌肤，自然而然。"
+  };
+
+  var STORE_KEY = "drjolie-lang";
+  var HTML_LANG = { en: "en", zh: "zh-Hans" };
+  var current = "en";
+
+  /* Take one snapshot of the English page so we can switch back and forth. */
+  var textNodes = [];
+  var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: function(node){
+      var parent = node.parentElement;
+      if(!parent) return NodeFilter.FILTER_REJECT;
+      var tag = parent.nodeName;
+      if(tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") return NodeFilter.FILTER_REJECT;
+      if(parent.closest("[data-i18n-html], .lang-switch")) return NodeFilter.FILTER_REJECT;
+      return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  while(walker.nextNode()) textNodes.push({ node: walker.currentNode, en: walker.currentNode.nodeValue });
+
+  var attrNodes = [];
+  ["placeholder","title","alt","aria-label"].forEach(function(attr){
+    document.querySelectorAll("[" + attr + "]").forEach(function(el){
+      var value = el.getAttribute(attr);
+      if(value && value.trim() && !el.closest(".lang-switch")){
+        attrNodes.push({ el: el, attr: attr, en: value });
+      }
+    });
+  });
+
+  var htmlNodes = [];
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+    htmlNodes.push({ el: el, key: el.getAttribute("data-i18n-html"), en: el.innerHTML });
+  });
+
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var enTitle = document.title;
+  var enDesc = metaDesc ? metaDesc.getAttribute("content") : "";
+
+  function lookup(text){
+    var key = text.trim();
+    return Object.prototype.hasOwnProperty.call(ZH, key) ? ZH[key] : null;
+  }
+
+  /* Swap the words but keep the original spacing, so nothing shifts. */
+  function swap(original, zh){
+    return original.replace(original.trim(), function(){ return zh; });
+  }
+
+  function apply(lang){
+    current = lang;
+    var toZh = lang === "zh";
+
+    textNodes.forEach(function(rec){
+      var zh = toZh ? lookup(rec.en) : null;
+      rec.node.nodeValue = zh === null ? rec.en : swap(rec.en, zh);
+    });
+    attrNodes.forEach(function(rec){
+      var zh = toZh ? lookup(rec.en) : null;
+      rec.el.setAttribute(rec.attr, zh === null ? rec.en : swap(rec.en, zh));
+    });
+    htmlNodes.forEach(function(rec){
+      var zh = toZh ? ZH_HTML[rec.key] : null;
+      rec.el.innerHTML = zh || rec.en;
+    });
+
+    var zhTitle = toZh ? lookup(enTitle) : null;
+    document.title = zhTitle === null ? enTitle : zhTitle;
+    if(metaDesc){
+      var zhDesc = toZh ? lookup(enDesc) : null;
+      metaDesc.setAttribute("content", zhDesc === null ? enDesc : zhDesc);
+    }
+    document.documentElement.lang = HTML_LANG[lang];
+
+    document.querySelectorAll("#langSwitch button").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+  }
+
+  function remember(lang){
+    try { localStorage.setItem(STORE_KEY, lang); } catch(e){}
+    try {
+      var url = new URL(window.location.href);
+      if(lang === "zh") url.searchParams.set("lang", "zh"); else url.searchParams.delete("lang");
+      window.history.replaceState(null, "", url.toString());
+    } catch(e){}
+  }
+
+  function setLang(lang){ apply(lang); remember(lang); }
+
+  function initialLang(){
+    var fromUrl = null;
+    try { fromUrl = new URLSearchParams(window.location.search).get("lang"); } catch(e){}
+    if(fromUrl === "zh" || fromUrl === "en") return fromUrl;
+
+    var saved = null;
+    try { saved = localStorage.getItem(STORE_KEY); } catch(e){}
+    if(saved === "zh" || saved === "en") return saved;
+
+    /* Only for browsers set to Simplified Chinese. Hong Kong and Taiwan
+       browsers (zh-HK, zh-TW) read Traditional, so they stay on English. */
+    var nav = (navigator.language || "").toLowerCase();
+    if(nav === "zh-cn" || nav === "zh-sg" || nav.indexOf("zh-hans") === 0) return "zh";
+    return "en";
+  }
+
+  var switcher = document.getElementById("langSwitch");
+  if(switcher){
+    switcher.addEventListener("click", function(e){
+      var btn = e.target.closest("button[data-lang]");
+      if(btn) setLang(btn.getAttribute("data-lang"));
+    });
+  }
+
+  /* Lets the contact form show its alert in the current language. */
+  window.t = function(text){
+    var zh = current === "zh" ? lookup(text) : null;
+    return zh === null ? text : zh;
+  };
+
+  setLang(initialLang());
+})();
 </script>
 </body>
 </html>
