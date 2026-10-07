@@ -988,6 +988,19 @@
       const msg='Please enter your name and email.';
       alert(window.t?window.t(msg):msg);return;
     }
+    // Collect form data
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
+    const msg = form.message.value.trim();
+
+    // Build WhatsApp message with formatting
+    const whatsappMsg = `*Consultation Request*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Treatment:* ${service}\n*Message:* ${msg || '(No message)'}`;
+
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/85266286127?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+
     document.getElementById('formSuccess').style.display='block';
     form.reset();
   });
