@@ -15,6 +15,7 @@
 <link rel="canonical" href="https://drjolie.com/" />
 <link rel="alternate" hreflang="en" href="https://drjolie.com/" />
 <link rel="alternate" hreflang="zh-Hant" href="https://drjolie.com/?lang=zh" />
+<link rel="alternate" hreflang="es" href="https://drjolie.com/?lang=es" />
 <link rel="alternate" hreflang="x-default" href="https://drjolie.com/" />
 <meta property="og:url" content="https://drjolie.com/" />
 <meta property="og:image" content="https://drjolie.com/assets/logo.png" />
@@ -278,6 +279,19 @@
     .foot-grid{grid-template-columns:1fr 1fr}
     .hero-badge{left:0}
   }
+  /* Medium widths (tablets, small laptop windows): keep the header on one line */
+  @media(max-width:1100px) and (min-width:681px){
+    .nav-links{gap:1.1rem}
+    .nav-cta{gap:.6rem}
+    .nav-cta .btn{padding:.7rem 1.2rem;font-size:.88rem;white-space:nowrap}
+    .logo small{display:none}
+  }
+  @media(max-width:860px) and (min-width:681px){
+    .nav-cta .btn{display:none}
+  }
+  @media(max-width:480px){
+    .logo small{display:none}
+  }
   @media(max-width:680px){
     section{padding:70px 0}
     .nav-links,.nav-cta .btn{display:none}
@@ -318,9 +332,10 @@
       <li class="mobile-only"><a href="#contact" data-link class="btn btn-primary" style="color:#fff">Book a Consultation</a></li>
     </ul>
     <div class="nav-cta">
-      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / 語言">
-        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / 語言 / Idioma">
         <button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hant">繁體中文</button>
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
       </div>
       <a href="#contact" data-link class="btn btn-primary">Book a Consultation</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -1010,10 +1025,10 @@
 </script>
 
 <!-- =====================================================================
-     LANGUAGE SWITCH — English / 繁體中文 (Traditional, Hong Kong)
+     LANGUAGE SWITCH — 繁體中文 (Traditional, Hong Kong) / English / Español
      ---------------------------------------------------------------------
-     TO EDIT THE CHINESE WORDING: find the English line on the left and
-     change the Chinese text on the right. Keep the English exactly as it
+     TO EDIT THE CHINESE OR SPANISH WORDING: find the English line on the
+     left (in ZH or ES below) and change the text on the right. Keep the English exactly as it
      appears on the page — that is how the two are matched up.
      Anything not listed here simply stays in English (brand names such as
      Botox, Profhilo, Rejuran and Morpheus8 are left in English on purpose).
@@ -1331,8 +1346,283 @@
     heroHeadline: "喚醒最<em>光采</em>的肌膚，自然而然。"
   };
 
+  /* ---------- Spanish (Español) — same English keys as above ---------- */
+  var ES = {
+    "Beaute & Aesthetic": "Belleza y Estética",
+    "Home": "Inicio",
+    "About": "Nosotros",
+    "Services": "Servicios",
+    "Listings": "Precios",
+    "Contact": "Contacto",
+    "Book a Consultation": "Reservar consulta",
+    "Book Your Consultation": "Reserve su consulta",
+    "Menu": "Menú",
+    "Treatments": "Tratamientos",
+    "Dr Jolie Beaute & Aesthetic Centre": "Dr Jolie Centro de Belleza y Estética",
+    "Dr Jolie Beaute & Aesthetic Centre | Botox, Fillers, Profhilo & Laser in Hong Kong": "Dr Jolie Centro de Belleza y Estética | Botox, rellenos, Profhilo y láser en Hong Kong",
+    "Dr Jolie Beaute & Aesthetic Centre in Jordan, Hong Kong. Premium Botox, dermal fillers, Profhilo, skin facials, IPL and laser treatments. Book your consultation today.": "Dr Jolie Centro de Belleza y Estética en Jordan, Hong Kong. Botox, rellenos dérmicos, Profhilo, faciales, IPL y tratamientos láser de primera calidad. Reserve su consulta hoy.",
+    "Beaute & Aesthetic Centre · Hong Kong": "Centro de Belleza y Estética · Hong Kong",
+    "Doctor-led Botox, dermal fillers, Profhilo, advanced facials, IPL and laser — delivered with precision and care in the heart of Jordan, Kowloon.": "Botox, rellenos dérmicos, Profhilo, faciales avanzados, IPL y láser realizados por médicos, con precisión y cuidado, en el corazón de Jordan, Kowloon.",
+    "Explore Treatments": "Ver tratamientos",
+    "Treatments delivered": "Tratamientos realizados",
+    "Average client rating": "Valoración media de clientes",
+    "Years of expertise": "Años de experiencia",
+    "Doctor-Led Care": "Atención médica",
+    "Safe, certified & personalised": "Segura, certificada y personalizada",
+    "Licensed Medical Doctors": "Médicos colegiados",
+    "FDA-Approved Products": "Productos aprobados por la FDA",
+    "Personalised Treatment Plans": "Planes de tratamiento personalizados",
+    "Discreet Jordan MTR Location": "Ubicación discreta junto al MTR de Jordan",
+    "Why Dr Jolie": "Por qué Dr Jolie",
+    "Aesthetics, elevated by expertise": "Estética elevada por la experiencia",
+    "Every treatment begins with a thorough consultation and ends with results that look like the best version of you.": "Cada tratamiento comienza con una consulta minuciosa y termina con resultados que reflejan la mejor versión de usted.",
+    "Natural-Looking Results": "Resultados naturales",
+    "We enhance, never overdo. Subtle, balanced outcomes that respect your unique features and refresh your confidence.": "Realzamos, nunca exageramos. Resultados sutiles y equilibrados que respetan sus rasgos y renuevan su confianza.",
+    "Safety First, Always": "La seguridad, siempre primero",
+    "Medical-grade products, sterile protocols and qualified doctors. Your wellbeing guides every decision we make.": "Productos de grado médico, protocolos estériles y médicos cualificados. Su bienestar guía cada decisión que tomamos.",
+    "Tailored To You": "Hecho a su medida",
+    "No two faces are alike. We design bespoke plans around your goals, skin type and lifestyle — not a one-size template.": "No hay dos rostros iguales. Diseñamos planes a medida según sus objetivos, tipo de piel y estilo de vida, no una plantilla única.",
+    "Signature Treatments": "Tratamientos estrella",
+    "Our most-loved services": "Nuestros servicios favoritos",
+    "From injectables to advanced skin therapies — a curated menu for face and skin rejuvenation.": "Desde inyectables hasta terapias avanzadas para la piel: una selección cuidada para rejuvenecer el rostro y la piel.",
+    "Injectables": "Inyectables",
+    "Botox & Anti-Wrinkle": "Botox y antiarrugas",
+    "Smooth fine lines and soften expression wrinkles for a refreshed, well-rested look.": "Suaviza las líneas finas y las arrugas de expresión para un aspecto fresco y descansado.",
+    "Dermal Fillers": "Rellenos dérmicos",
+    "Restore volume, sculpt contours and rejuvenate lips, cheeks and jawline with precision.": "Restaura el volumen, esculpe contornos y rejuvenece labios, pómulos y mandíbula con precisión.",
+    "Skin Boosters": "Bioestimuladores",
+    "Bio-remodelling that deeply hydrates and firms skin from within for a luminous glow.": "Biorremodelación que hidrata en profundidad y reafirma la piel desde el interior para un brillo luminoso.",
+    "Learn more →": "Más información →",
+    "View All Services": "Ver todos los servicios",
+    "Client Love": "Opiniones",
+    "What our clients say": "Lo que dicen nuestros clientes",
+    "\"The most natural Botox I've ever had. Dr Jolie really listens and the clinic feels so calm and premium.\"": "\"El Botox más natural que me han hecho. La Dra. Jolie escucha de verdad y la clínica transmite calma y exclusividad.\"",
+    "Central, Hong Kong": "Central, Hong Kong",
+    "\"My skin has never looked better after Profhilo. Professional, painless and the results speak for themselves.\"": "\"Mi piel nunca se ha visto mejor que después del Profhilo. Profesional, sin dolor y los resultados hablan por sí solos.\"",
+    "Tsim Sha Tsui": "Tsim Sha Tsui",
+    "\"Booked for fillers and left feeling like myself, only fresher. I trust no one else with my face now.\"": "\"Vine por rellenos y salí sintiéndome yo misma, solo que más fresca. Ahora no confío mi rostro a nadie más.\"",
+    "Kowloon": "Kowloon",
+    "About Dr Jolie": "Sobre Dr Jolie",
+    "Where medical precision meets beauty": "Donde la precisión médica se une a la belleza",
+    "Dr Jolie Beaute & Aesthetic Centre was founded on a simple belief: aesthetic medicine should feel safe, personal and empowering. We combine clinical excellence with an artist's eye for balance.": "Dr Jolie Centro de Belleza y Estética nació de una convicción sencilla: la medicina estética debe ser segura, personal y transmitir confianza. Combinamos la excelencia clínica con la mirada de un artista para el equilibrio.",
+    "Doctor-led consultations, never rushed": "Consultas con médicos, sin prisas",
+    "Premium, regulated products only": "Solo productos de primera calidad y regulados",
+    "A discreet, calming environment": "Un ambiente discreto y relajante",
+    "Read Our Story": "Conozca nuestra historia",
+    "Ready to glow?": "¿Es hora de brillar?",
+    "Book a personalised consultation with Dr Jolie and discover the treatment plan that's right for you.": "Reserve una consulta personalizada con Dr Jolie y descubra el plan de tratamiento ideal para usted.",
+    "Our Story": "Nuestra historia",
+    "Beauty, backed by medicine": "Belleza respaldada por la medicina",
+    "A Hong Kong aesthetic centre built on trust, artistry and genuine care for every client who walks through our doors.": "Un centro estético en Hong Kong basado en la confianza, el arte y el cuidado genuino de cada cliente que cruza nuestra puerta.",
+    "The Beginning": "Los inicios",
+    "A clinic built on confidence": "Una clínica construida sobre la confianza",
+    "Dr Jolie Beaute & Aesthetic Centre was created to bridge the gap between clinical safety and beautiful, natural results. Too often, clients felt rushed or pushed toward treatments they didn't need. We do things differently.": "Dr Jolie Centro de Belleza y Estética se creó para unir la seguridad clínica con resultados bellos y naturales. Con demasiada frecuencia, los clientes se sentían apresurados o presionados hacia tratamientos que no necesitaban. Nosotros lo hacemos de otra manera.",
+    "Located on Nathan Road in Jordan, our centre offers a serene, private space where every client is seen, heard and cared for by qualified medical professionals.": "Situado en Nathan Road, en Jordan, nuestro centro ofrece un espacio sereno y privado donde cada cliente es atendido, escuchado y cuidado por profesionales médicos cualificados.",
+    "Our Mission": "Nuestra misión",
+    "Helping Hong Kong feel its best": "Ayudar a Hong Kong a sentirse en su mejor momento",
+    "Our mission is to deliver aesthetic treatments that enhance your natural beauty while prioritising your health, comfort and confidence. We believe great aesthetic medicine is invisible — people should notice you, not your treatment.": "Nuestra misión es ofrecer tratamientos estéticos que realcen su belleza natural, priorizando su salud, comodidad y confianza. Creemos que la buena medicina estética es invisible: la gente debe notarle a usted, no a su tratamiento.",
+    "From your first consultation to your aftercare, we're committed to honesty, transparency and results you'll genuinely love.": "Desde su primera consulta hasta el cuidado posterior, nos comprometemos con la honestidad, la transparencia y resultados que de verdad le encantarán.",
+    "What Makes Us Different": "Qué nos diferencia",
+    "The Dr Jolie difference": "La diferencia Dr Jolie",
+    "Doctor-Led, Always": "Siempre con médicos",
+    "Treatments are planned and performed by qualified medical doctors — not technicians — for your safety and the best outcomes.": "Los tratamientos los planifican y realizan médicos cualificados, no técnicos, para su seguridad y los mejores resultados.",
+    "No-Rush Consultations": "Consultas sin prisas",
+    "We take the time to understand your goals and explain your options honestly — never pressuring, always advising.": "Nos tomamos el tiempo de entender sus objetivos y explicarle sus opciones con honestidad: nunca presionamos, siempre aconsejamos.",
+    "Premium Standards": "Estándares de excelencia",
+    "Only regulated, clinically proven products and the latest devices, in an immaculate, calming environment.": "Solo productos regulados y clínicamente probados y los equipos más modernos, en un entorno impecable y relajante.",
+    "Come and meet us": "Venga a conocernos",
+    "Book a relaxed, no-obligation consultation and see why our clients keep coming back.": "Reserve una consulta tranquila y sin compromiso, y descubra por qué nuestros clientes siempre vuelven.",
+    "Our aesthetic services": "Nuestros servicios estéticos",
+    "A complete menu of doctor-led face and skin treatments, tailored to your goals.": "Una carta completa de tratamientos faciales y de piel realizados por médicos, adaptados a sus objetivos.",
+    "Botulinum Toxins": "Toxinas botulínicas",
+    "Precision Botox and Xeomin, dosed by the unit to relax expression lines with a natural finish.": "Botox y Xeomin de precisión, dosificados por unidad para relajar las líneas de expresión con un acabado natural.",
+    "Restore lost volume and define lips, cheeks, chin and jawline with premium hyaluronic acid fillers.": "Recupere el volumen perdido y defina labios, pómulos, mentón y mandíbula con rellenos de ácido hialurónico de primera calidad.",
+    "Bio-Remodelling": "Biorremodelación",
+    "Profhilo, Rejuran and Belotero injectables that hydrate, firm and revive skin quality from within.": "Inyectables Profhilo, Rejuran y Belotero que hidratan, reafirman y revitalizan la calidad de la piel desde el interior.",
+    "Skin": "Piel",
+    "Facials & Skin Care": "Faciales y cuidado de la piel",
+    "Bespoke medical-grade facials, PicoSure laser facials and add-ons for an instant, healthy glow.": "Faciales de grado médico a medida, faciales con láser PicoSure y complementos para un brillo saludable al instante.",
+    "Devices": "Aparatología",
+    "Radiofrequency & Tightening": "Radiofrecuencia y reafirmación",
+    "Oligio, Exilis, Dermapen and Morpheus8 for firmer, tighter, more even-textured skin.": "Oligio, Exilis, Dermapen y Morpheus8 para una piel más firme, tensa y de textura uniforme.",
+    "Laser & Light": "Láser y luz",
+    "Laser Treatments": "Tratamientos láser",
+    "Helios, CO2, PicoSure Pro and IPL (M22) laser therapy for pigmentation, texture and resurfacing.": "Terapia láser Helios, CO2, PicoSure Pro e IPL (M22) para pigmentación, textura y renovación de la piel.",
+    "Body": "Cuerpo",
+    "Waxing": "Depilación con cera",
+    "Full-body waxing for men and women, from brows and lip to legs, back and bikini.": "Depilación con cera de cuerpo completo para hombres y mujeres, desde cejas y labio hasta piernas, espalda y bikini.",
+    "Advanced": "Avanzados",
+    "Body & Advanced Treatments": "Tratamientos corporales y avanzados",
+    "PCL Threads, Sculptra, Ultherapy, Mini FX and eyelash lamination for lifting, volume and finishing touches.": "Hilos PCL, Sculptra, Ultherapy, Mini FX y laminado de pestañas para lifting, volumen y los toques finales.",
+    "View pricing →": "Ver precios →",
+    "From HK$100": "Desde HK$100",
+    "From HK$120": "Desde HK$120",
+    "From HK$800": "Desde HK$800",
+    "From HK$950": "Desde HK$950",
+    "From HK$1,000": "Desde HK$1,000",
+    "From HK$3,000": "Desde HK$3,000",
+    "From HK$4,000": "Desde HK$4,000",
+    "How It Works": "Cómo funciona",
+    "Your journey with us": "Su experiencia con nosotros",
+    "Consultation": "Consulta",
+    "We listen to your goals and assess your skin and facial structure in a relaxed, private setting.": "Escuchamos sus objetivos y evaluamos su piel y estructura facial en un ambiente tranquilo y privado.",
+    "Tailored Plan": "Plan a medida",
+    "Your doctor designs a personalised treatment plan with honest advice and transparent pricing.": "Su médico diseña un plan de tratamiento personalizado, con asesoramiento honesto y precios transparentes.",
+    "Treatment": "Tratamiento",
+    "Your treatment is performed with precision, comfort and the highest safety standards.": "Su tratamiento se realiza con precisión, comodidad y los más altos estándares de seguridad.",
+    "Aftercare": "Cuidados posteriores",
+    "We guide you through recovery and follow up to ensure you love your results.": "Le acompañamos durante la recuperación y hacemos seguimiento para que le encanten sus resultados.",
+    "Questions": "Preguntas",
+    "Frequently asked": "Preguntas frecuentes",
+    "Is Botox safe?": "¿Es seguro el Botox?",
+    "Yes. When administered by qualified medical doctors using regulated products, Botox has an excellent safety record. We assess your suitability during consultation and explain everything beforehand.": "Sí. Cuando lo aplican médicos cualificados con productos regulados, el Botox tiene un excelente historial de seguridad. Evaluamos si es adecuado para usted durante la consulta y se lo explicamos todo de antemano.",
+    "How long do fillers last?": "¿Cuánto duran los rellenos?",
+    "Most dermal fillers last between 6 and 18 months depending on the product and treatment area. We'll advise on the best option and maintenance schedule for you.": "La mayoría de los rellenos dérmicos duran entre 6 y 18 meses, según el producto y la zona tratada. Le aconsejaremos la mejor opción y el calendario de mantenimiento adecuado para usted.",
+    "What is Profhilo and how is it different?": "¿Qué es Profhilo y en qué se diferencia?",
+    "Profhilo is a bio-remodelling injectable that uses pure hyaluronic acid to hydrate and stimulate collagen across a wider area, improving overall skin quality rather than adding volume to one spot.": "Profhilo es un inyectable de biorremodelación que utiliza ácido hialurónico puro para hidratar y estimular el colágeno en una zona amplia, mejorando la calidad general de la piel en lugar de añadir volumen en un solo punto.",
+    "Is there any downtime?": "¿Hay tiempo de recuperación?",
+    "Most treatments have minimal downtime. You may experience slight redness or swelling that settles quickly. We provide full aftercare guidance for every treatment.": "La mayoría de los tratamientos requieren una recuperación mínima. Puede notar un ligero enrojecimiento o hinchazón que desaparece pronto. Le damos indicaciones completas de cuidado posterior para cada tratamiento.",
+    "How do I book a consultation?": "¿Cómo reservo una consulta?",
+    "Simply use our contact form, call us on +852 6628 6127, or message us on Instagram @joliebeaute_hk. We'll find a time that suits you.": "Utilice nuestro formulario de contacto, llámenos al +852 6628 6127 o escríbanos por Instagram a @joliebeaute_hk. Buscaremos el horario que mejor le convenga.",
+    "Not sure which treatment is right?": "¿No sabe qué tratamiento le conviene?",
+    "Book a consultation and let our doctors recommend the perfect plan for your skin and goals.": "Reserve una consulta y deje que nuestros médicos le recomienden el plan perfecto para su piel y sus objetivos.",
+    "Full Price List": "Lista de precios completa",
+    "Treatments & pricing": "Tratamientos y precios",
+    "Every treatment we offer, organised by category, with transparent pricing so you know what to expect before you book.": "Todos nuestros tratamientos, organizados por categoría y con precios transparentes, para que sepa qué esperar antes de reservar.",
+    "All Treatments": "Todos los tratamientos",
+    "Facials": "Faciales",
+    "Radiofrequency": "Radiofrecuencia",
+    "Laser": "Láser",
+    "Body & Advanced": "Corporales y avanzados",
+    "Botox and Xeomin, priced per unit and dosed to your treatment area during consultation.": "Botox y Xeomin, con precio por unidad y dosis ajustada a la zona a tratar durante la consulta.",
+    "Premium hyaluronic acid fillers for volume, contour and definition.": "Rellenos de ácido hialurónico de primera calidad para volumen, contorno y definición.",
+    "Bio-remodelling injectables that hydrate, firm and improve overall skin quality.": "Inyectables de biorremodelación que hidratan, reafirman y mejoran la calidad general de la piel.",
+    "Medical-grade facials by our estheticians, plus targeted add-ons.": "Faciales de grado médico realizados por nuestras esteticistas, con complementos específicos.",
+    "Radiofrequency & Skin Tightening": "Radiofrecuencia y reafirmación de la piel",
+    "Device-led tightening and microneedling — Oligio, Exilis, Dermapen and Morpheus8.": "Reafirmación y micropunción con aparatología: Oligio, Exilis, Dermapen y Morpheus8.",
+    "Advanced laser and light therapy for pigmentation, resurfacing and tightening.": "Terapia avanzada de láser y luz para pigmentación, renovación y reafirmación de la piel.",
+    "Full-body waxing for women and men, from brows and lip to legs, back and bikini.": "Depilación con cera de cuerpo completo para mujeres y hombres, desde cejas y labio hasta piernas, espalda y bikini.",
+    "Threads, Sculptra, Ultherapy and more, for lifting, volume and finishing touches.": "Hilos, Sculptra, Ultherapy y más, para lifting, volumen y los toques finales.",
+    "Rejuran Healer (Black)": "Rejuran Healer (negro)",
+    "Rejuran S (Blue)": "Rejuran S (azul)",
+    "Rejuran I (White)": "Rejuran I (blanco)",
+    "Profhilo — Necklines by Cannula": "Profhilo — escote con cánula",
+    "Deep Cleansing Facial": "Limpieza facial profunda",
+    "Dr Jolie PicoSure Laser Facial": "Facial láser PicoSure Dr Jolie",
+    "Dermalogica Pro Pen (Lips)": "Dermalogica Pro Pen (labios)",
+    "Dermalogica Pro Pen (Eye)": "Dermalogica Pro Pen (ojos)",
+    "Add-on": "Complemento",
+    "Chemical Peel": "Peeling químico",
+    "Carbon Facial": "Facial de carbón",
+    "Oligio (Lower Face)": "Oligio (tercio inferior del rostro)",
+    "Oligio (Whole Face)": "Oligio (rostro completo)",
+    "Exilis Ultra 360 (Face)": "Exilis Ultra 360 (rostro)",
+    "Exilis Ultra 360 (Body)": "Exilis Ultra 360 (cuerpo)",
+    "Skin Botox (Dermapen)": "Skin Botox (Dermapen)",
+    "Helios Laser": "Láser Helios",
+    "CO2 Laser": "Láser CO2",
+    "CO2 Laser (Undereye)": "Láser CO2 (ojeras)",
+    "Pigmented lesions — melasma, tattoo removal & more": "Lesiones pigmentadas: melasma, eliminación de tatuajes y más",
+    "Threads": "Hilos",
+    "12 PCL Threads": "12 hilos PCL",
+    "Eyelash Lamination": "Laminado de pestañas",
+    "per unit": "por unidad",
+    "per ml": "por ml",
+    "per 2ml": "por 2 ml",
+    "per session": "por sesión",
+    "per area": "por zona",
+    "single session": "sesión individual",
+    "incl. three top-ups": "incl. tres retoques",
+    "+HK$30 per line": "+HK$30 por línea",
+    "/ml": "/ml",
+    "By Injection —": "Por inyección —",
+    "By Dermapen —": "Con Dermapen —",
+    "Trial Session —": "Sesión de prueba —",
+    "Single Session —": "Sesión individual —",
+    "Three Sessions —": "Tres sesiones —",
+    "Five Sessions —": "Cinco sesiones —",
+    "HA / Vitamin C —": "AH / vitamina C —",
+    "Exosomes —": "Exosomas —",
+    "Exosomes (5 Sessions) —": "Exosomas (5 sesiones) —",
+    "Face or Neck —": "Rostro o cuello —",
+    "Face + Neck —": "Rostro + cuello —",
+    "Abdomen —": "Abdomen —",
+    "Area": "Zona",
+    "Female": "Mujer",
+    "Male": "Hombre",
+    "Eyebrow": "Cejas",
+    "Upper Lip": "Labio superior",
+    "Full Face — Including Eyebrows": "Rostro completo — incluye cejas",
+    "Full Face — Not Including Eyebrows": "Rostro completo — sin cejas",
+    "Underarm": "Axilas",
+    "Half Arms": "Medio brazo",
+    "Full Arms": "Brazos completos",
+    "Chest": "Pecho",
+    "Back of Neck": "Nuca",
+    "Back": "Espalda",
+    "Lower Legs": "Media pierna",
+    "Full Legs": "Piernas completas",
+    "Bikini": "Bikini",
+    "G-String": "Bikini tanga",
+    "Hollywood": "Hollywood (integral)",
+    "All prices are listed in Hong Kong Dollars (HK$). Final pricing is confirmed with your doctor at consultation, based on treatment area, product quantity and your individual plan.": "Todos los precios están en dólares de Hong Kong (HK$). El precio final se confirma con su médico en la consulta, según la zona a tratar, la cantidad de producto y su plan individual.",
+    "Ready to book?": "¿Todo listo para reservar?",
+    "Choose your treatment above and book a consultation with Dr Jolie to confirm your personalised plan.": "Elija su tratamiento arriba y reserve una consulta con Dr Jolie para confirmar su plan personalizado.",
+    "Get In Touch": "Contáctenos",
+    "Book your consultation": "Reserve su consulta",
+    "We'd love to hear from you. Send us a message and our team will be in touch shortly.": "Nos encantará saber de usted. Envíenos un mensaje y nuestro equipo se pondrá en contacto pronto.",
+    "Your Name": "Su nombre",
+    "Enter your name": "Escriba su nombre",
+    "Email": "Correo electrónico",
+    "Phone": "Teléfono",
+    "Treatment of Interest": "Tratamiento de interés",
+    "Facial": "Facial",
+    "Not sure yet": "Aún no lo sé",
+    "Message": "Mensaje",
+    "Tell us what you'd like to achieve...": "Cuéntenos qué le gustaría conseguir...",
+    "Send Message": "Enviar mensaje",
+    "By submitting, you agree to be contacted about your enquiry. We respect your privacy.": "Al enviar, acepta que le contactemos sobre su consulta. Respetamos su privacidad.",
+    "Thank you! Your message has been received. Our team will contact you shortly.": "¡Gracias! Hemos recibido su mensaje. Nuestro equipo se pondrá en contacto con usted pronto.",
+    "Please enter your name and email.": "Por favor, escriba su nombre y correo electrónico.",
+    "Visit Us": "Visítenos",
+    "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, Hong Kong": "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, Hong Kong",
+    "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, HK": "Unit 1209, 12/F, 301-309 Nathan Rd, Jordan, HK",
+    "Call Us": "Llámenos",
+    "Map to Dr Jolie Beaute & Aesthetic Centre, Nathan Road Jordan": "Mapa de Dr Jolie Centro de Belleza y Estética, Nathan Road, Jordan",
+    "Doctor-led aesthetic medicine in the heart of Jordan, Hong Kong. Botox, fillers, Profhilo, facials, IPL & laser.": "Medicina estética realizada por médicos en el corazón de Jordan, Hong Kong. Botox, rellenos, Profhilo, faciales, IPL y láser.",
+    "Explore": "Explorar",
+    "IPL & Laser": "IPL y láser",
+    "Dr Jolie Beaute & Aesthetic Centre. All rights reserved. · Jordan, Hong Kong": "Dr Jolie Centro de Belleza y Estética. Todos los derechos reservados. · Jordan, Hong Kong",
+    "Relaxed client receiving a professional aesthetic skin treatment at Dr Jolie clinic": "Clienta relajada recibiendo un tratamiento estético profesional en la clínica Dr Jolie",
+    "Botox vials and injectable treatment bottles at the clinic": "Viales de Botox y frascos de tratamientos inyectables en la clínica",
+    "Dermal filler treatment for facial contouring and volume restoration": "Tratamiento con rellenos dérmicos para el contorno facial y la recuperación de volumen",
+    "Profhilo bio-remodelling skin hydration treatment": "Tratamiento de hidratación y biorremodelación de la piel con Profhilo",
+    "Portrait of client Wing L.": "Retrato de la clienta Wing L.",
+    "Portrait of client Carmen T.": "Retrato de la clienta Carmen T.",
+    "Portrait of client Priya S.": "Retrato de la clienta Priya S.",
+    "Calm, private treatment room at Dr Jolie, prepared with fresh towels and skincare products": "Sala de tratamiento tranquila y privada en Dr Jolie, preparada con toallas limpias y productos para la piel",
+    "Doctor in a modern aesthetic clinic consulting with a client": "Médica en una clínica estética moderna atendiendo a una clienta",
+    "Client receiving a gentle facial skin treatment at Dr Jolie": "Clienta recibiendo un suave tratamiento facial en Dr Jolie",
+    "Botox injectable vial bottle used for anti-wrinkle treatment": "Vial de Botox inyectable utilizado en tratamientos antiarrugas",
+    "Dermal filler facial contouring treatment": "Tratamiento de contorno facial con rellenos dérmicos",
+    "Profhilo bio-remodelling skin booster treatment": "Tratamiento bioestimulador de biorremodelación con Profhilo",
+    "Relaxing facial skincare treatment at the clinic": "Tratamiento facial relajante en la clínica",
+    "Radiofrequency and microneedling device treatment": "Tratamiento con aparatología de radiofrecuencia y micropunción",
+    "Laser skin rejuvenation treatment": "Tratamiento láser de rejuvenecimiento de la piel",
+    "Waxing treatment room at the clinic": "Sala de depilación con cera en la clínica",
+    "Advanced body and skin device treatment": "Tratamiento avanzado de cuerpo y piel con aparatología"
+  };
+
+  var ES_HTML = {
+    heroHeadline: "Revele su piel más <em>radiante</em>, de forma natural."
+  };
+
+  var DICTS = { zh: ZH, es: ES };
+  var HTML_DICTS = { zh: ZH_HTML, es: ES_HTML };
+
   var STORE_KEY = "drjolie-lang";
-  var HTML_LANG = { en: "en", zh: "zh-Hant" };
+  var HTML_LANG = { en: "en", zh: "zh-Hant", es: "es" };
+  var LANGS = ["zh", "en", "es"];
   var current = "en";
 
   /* Take one snapshot of the English page so we can switch back and forth. */
@@ -1368,9 +1658,11 @@
   var enTitle = document.title;
   var enDesc = metaDesc ? metaDesc.getAttribute("content") : "";
 
-  function lookup(text){
+  function lookup(text, lang){
+    var dict = DICTS[lang || current];
+    if(!dict) return null;
     var key = text.trim();
-    return Object.prototype.hasOwnProperty.call(ZH, key) ? ZH[key] : null;
+    return Object.prototype.hasOwnProperty.call(dict, key) ? dict[key] : null;
   }
 
   /* Swap the words but keep the original spacing, so nothing shifts. */
@@ -1380,26 +1672,25 @@
 
   function apply(lang){
     current = lang;
-    var toZh = lang === "zh";
+    var htmlDict = HTML_DICTS[lang] || {};
 
     textNodes.forEach(function(rec){
-      var zh = toZh ? lookup(rec.en) : null;
-      rec.node.nodeValue = zh === null ? rec.en : swap(rec.en, zh);
+      var tr = lookup(rec.en, lang);
+      rec.node.nodeValue = tr === null ? rec.en : swap(rec.en, tr);
     });
     attrNodes.forEach(function(rec){
-      var zh = toZh ? lookup(rec.en) : null;
-      rec.el.setAttribute(rec.attr, zh === null ? rec.en : swap(rec.en, zh));
+      var tr = lookup(rec.en, lang);
+      rec.el.setAttribute(rec.attr, tr === null ? rec.en : swap(rec.en, tr));
     });
     htmlNodes.forEach(function(rec){
-      var zh = toZh ? ZH_HTML[rec.key] : null;
-      rec.el.innerHTML = zh || rec.en;
+      rec.el.innerHTML = htmlDict[rec.key] || rec.en;
     });
 
-    var zhTitle = toZh ? lookup(enTitle) : null;
-    document.title = zhTitle === null ? enTitle : zhTitle;
+    var trTitle = lookup(enTitle, lang);
+    document.title = trTitle === null ? enTitle : trTitle;
     if(metaDesc){
-      var zhDesc = toZh ? lookup(enDesc) : null;
-      metaDesc.setAttribute("content", zhDesc === null ? enDesc : zhDesc);
+      var trDesc = lookup(enDesc, lang);
+      metaDesc.setAttribute("content", trDesc === null ? enDesc : trDesc);
     }
     document.documentElement.lang = HTML_LANG[lang];
 
@@ -1412,7 +1703,7 @@
     try { localStorage.setItem(STORE_KEY, lang); } catch(e){}
     try {
       var url = new URL(window.location.href);
-      if(lang === "zh") url.searchParams.set("lang", "zh"); else url.searchParams.delete("lang");
+      if(lang !== "en") url.searchParams.set("lang", lang); else url.searchParams.delete("lang");
       window.history.replaceState(null, "", url.toString());
     } catch(e){}
   }
@@ -1422,11 +1713,11 @@
   function initialLang(){
     var fromUrl = null;
     try { fromUrl = new URLSearchParams(window.location.search).get("lang"); } catch(e){}
-    if(fromUrl === "zh" || fromUrl === "en") return fromUrl;
+    if(LANGS.indexOf(fromUrl) !== -1) return fromUrl;
 
     var saved = null;
     try { saved = localStorage.getItem(STORE_KEY); } catch(e){}
-    if(saved === "zh" || saved === "en") return saved;
+    if(LANGS.indexOf(saved) !== -1) return saved;
 
     /* Any Chinese-language browser gets the Chinese version. Hong Kong,
        Taiwan and Macau (zh-HK, zh-TW, zh-MO) read Traditional natively;
@@ -1434,6 +1725,8 @@
        Traditional, and Chinese still serves them better than English. */
     var nav = (navigator.language || "").toLowerCase();
     if(nav.indexOf("zh") === 0) return "zh";
+    /* Spanish-language browsers (es, es-ES, es-MX, es-419 ...) get Spanish. */
+    if(nav.indexOf("es") === 0) return "es";
     return "en";
   }
 
@@ -1447,8 +1740,8 @@
 
   /* Lets the contact form show its alert in the current language. */
   window.t = function(text){
-    var zh = current === "zh" ? lookup(text) : null;
-    return zh === null ? text : zh;
+    var tr = lookup(text, current);
+    return tr === null ? text : tr;
   };
 
   setLang(initialLang());
